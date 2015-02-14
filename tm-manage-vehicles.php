@@ -230,8 +230,8 @@ printLeft();
 													.$row['capacity'].'</td><td class="hidden-480">'.$row['vehicle_condition']
 													.'</td><td class="hidden-1024">'.$row['vehicle_status'].'</td><td class="hidden-1024">'
 													.$row['route'].'</td><td class="hidden-1024">'.$row['driver'].'</td><td class="hidden-1024">'
-													.$row['conductor'].'</td><td><button class="edit btn btn-warning" value="'.$row['route_number']
-													.'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span><button class="delete btn btn-warning" value="'.$row['route_number']
+													.$row['conductor'].'</td><td><button class="edit btn btn-warning" value="'.$row['route']
+													.'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span><button class="delete btn btn-warning" value="'.$row['route']
 													.'"><i class="icon-trash"></i>Delete</button></td></tr>';
 											}
 								        }
