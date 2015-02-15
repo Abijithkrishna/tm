@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2babd5a9-89b5-4163-8404-41c43a57d689" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routedetails.php" afterPath="$PROJECT_DIR$/routedetails.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,23 +47,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routedetails.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routedetails.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routedetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49119717" vertical-offset="3104" max-vertical-offset="3740">
-              <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+            <state vertical-scroll-proportion="-9.423077" vertical-offset="3104" max-vertical-offset="3740">
+              <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.692307" vertical-offset="44" max-vertical-offset="629">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.04225352" vertical-offset="44" max-vertical-offset="629">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
               <folding>
-                <marker date="1424029536337" expanded="true" signature="391:437" placeholder="select * fro..tm_bus_route..." />
+                <marker date="1424029667617" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
               </folding>
             </state>
           </provider>
@@ -105,8 +103,8 @@
         <option value="$PROJECT_DIR$/tm-add-route.php" />
         <option value="$PROJECT_DIR$/cms.php" />
         <option value="$PROJECT_DIR$/add_route.php" />
-        <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/routedetails.php" />
+        <option value="$PROJECT_DIR$/test.php" />
       </list>
     </option>
   </component>
@@ -281,7 +279,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424029536337" expanded="true" signature="391:437" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029667617" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -411,21 +409,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
+    <entry file="file://$PROJECT_DIR$/routedetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.692307" vertical-offset="44" max-vertical-offset="629">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <marker date="1424029536337" expanded="true" signature="391:437" placeholder="select * fro..tm_bus_route..." />
-          </folding>
+        <state vertical-scroll-proportion="-9.423077" vertical-offset="3104" max-vertical-offset="3740">
+          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routedetails.php">
+    <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49119717" vertical-offset="3104" max-vertical-offset="3740">
-          <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.04225352" vertical-offset="44" max-vertical-offset="629">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding>
+            <marker date="1424029667617" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+          </folding>
         </state>
       </provider>
     </entry>

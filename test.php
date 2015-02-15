@@ -2,7 +2,7 @@
 require_once "praveenlib.php";
 require_once "datas.php";
 
-$keys=array('number','start','end','time');
+$keys=array('number');
 if(checkPOST($keys)){
     $dbconnection = connectSQL($dbdetails);
 
