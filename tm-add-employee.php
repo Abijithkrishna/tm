@@ -194,7 +194,14 @@ printLeft();
                         <div class="control-group">
                             <label for="role" class="control-label">Employee Role</label>
                             <div class="controls">
-                                <input type="text" name="role" id="textfield" placeholder="" class="input-xlarge">
+                                <select name="role" id="select" class='input-large'>
+                                    <option value="driver">Driver</option>
+                                    <option value="conductor">Conductor</option>
+                                    <option value="dirverconductor">Driver and Conductor</option>
+
+
+                                </select>
+
                             </div>
                         </div>
 
@@ -224,21 +231,9 @@ printLeft();
                                 <input type="text" name="verification" id="textfield" placeholder="" class="input-xlarge">
                             </div>
                         </div>
-
-
-
-
-                        <!--
-                        <div class="control-group">
-                            <label for="" class="control-label"></label>
-                            <div class="controls">
-                                <input type="text" name="" id="textfield" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    -->
                         <div class="form-actions">
                             <button onclick="send();" type="button" class="btn btn-primary">Save</button>
-                            <a href="tm-vehicle-details.html">
+                            <a href="tm-manage-employee.php">
                                 <button type="button" class="btn" >Cancel</button>
                             </a>
 
@@ -279,6 +274,7 @@ printLeft();
             $('button').attr('disabled',false);
             if(status==="success"){
                 alert(data);
+                if(data==='success')document.forms['main-form'].reset();
 
             }
         })

@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html>
 <head>
 <title>Edufee</title>
@@ -153,7 +153,7 @@ printLeft();
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Vehicle Details</h1>
+						<h1>Assign Passenger</h1>
 					</div>
 					<div class="pull-right">
 					    <ul class="minitiles" style="display:inline !important;">
@@ -171,110 +171,74 @@ printLeft();
 					    </ul>
 					</div>
 				</div>
-
-			<div class="row-fluid">
-					<div class="span12">
-						<div class="box box-color box-bordered">
+			</div>
+			<div class="container-fluid">
+			<div class="box box-bordered box-color">
 							<div class="box-title">
-								<h3>
-									<i class="icon-table"></i>
-									Vehicle Details
-								</h3>
-								<div class="pull-right" style="margin-right: 5px;">
-									<ul class="pull-right stats"><li class="lightred">
-											<a href="tm-add-vehicle.php">
-												<div  style="margin-right: 5px;">
-
-													<h3>Add Vehicle</h3>
-
-												</div>
-											</a>
-										</li></ul>
-								</div>
+								<h3><i class="icon-th-list"></i> New Passenger</h3>
 							</div>
 							<div class="box-content nopadding">
-								<table class="table table-hover table-nomargin table-bordered">
-									<thead>
-										<tr>
-											<th>Number</th>
-											<th>Type</th>
-											<th class='hidden-350'>Capacity</th>
-											<th class="hidden-480">Condition</th>
-											<th class='hidden-1024'>Status</th>
-											<th class="hidden-1024">Route</th>
-											<th class="hidden-1024">Driver</th>
-											<th class="hidden-1024">Conductor</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody>
-									<?php
-										require_once "praveenlib.php";
-										require_once "datas.php";
+								<form name="main-form" onsubmit="return false;" action="" method="POST" class='form-horizontal form-bordered'>
+									<div class="control-group">
+										<label for="id" class="control-label">Passenger Id</label>
+										<div class="controls">
+											<input type="text" name="id" id="textfield" placeholder="" class="input-xlarge">
+										</div>
+									</div>									
+									
+									<div class="control-group">
+										<label for="routenumber" class="control-label">Route Number</label>
+										<div class="controls">
+											<input type="text" name="routenumber" id="textfield" placeholder="" class="input-xlarge">
+										</div>
+									</div>
+									<div class="control-group">
+										<label for="stopnumber" class="control-label">Stop Number</label>
+										<div class="controls">
+											<input type="text" name="stopnumber" id="textfield" placeholder="" class="input-xlarge">
+										</div>
+									</div>
+									
 
-										$dbconnection = connectSQL($dbdetails);
-										
-										if(mysqli_connect_errno()) //Check if any error occurred on connection
-								        {
-								            echo "db_connection_fail";
-								        }
-								        else
-								        {
-								        	$sql="select * from tm_vehicle_details";
+									<div class="form-actions">
+										<button onclick="send();" type="button" class="btn btn-primary">Save</button>
+										<a href="tm-manage-passenger.php">
+										<button type="button" class="btn" >Cancel</button>
+										</a>
 
-								        	$result=mysqli_query($dbconnection,$sql);
-
-								        	while($row=mysqli_fetch_array($result))
-											{
-												echo '<tr><td>'.$row['number'].'</td><td>'.$row['type'].'</td><td class="hidden-350">'
-													.$row['capacity'].'</td><td class="hidden-480">'.$row['vehicle_condition']
-													.'</td><td class="hidden-1024">'.$row['vehicle_status'].'</td><td class="hidden-1024">'
-													.$row['route'].'</td><td class="hidden-1024">'.$row['driver'].'</td><td class="hidden-1024">'
-													.$row['conductor'].'</td><td><button class="edit btn btn-warning" value="'.$row['number']
-													.'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span><button class="delete btn btn-warning" value="'.$row['number']
-													.'"><i class="icon-trash"></i>Delete</button></td></tr>';
-											}
-								        }
-									?>
-									</tbody>
-								</table>
+									</div>
+								</form>
 							</div>
 						</div>
-					</div>
-				</div>
 			</div>
+
 		</div>
+	</div>
+
 </body>
-
 <script>
-	$(".edit").click(function () {
-		id=this.value;
-		window.location.href="tm-edit-vehicle.php?id="+id;
-	});
-	$(".delete").click(function () {
-		number=this.value;
-		var ans=confirm("Are you sure to delete route "+number);
-		if(ans)
-		{
-			var saveButton=$(this);
-			saveButton.attr("disabled",true);
-			$.post("tm-delete-vehicle.php",{
-
-				number:number
-			},function(data,status){
+	function send(){
+		var id=document.forms['main-form']['id'].value;
+		var route_number=document.forms['main-form']["routenumber"].value;
+		var stop_number=document.forms['main-form']['stopnumber'].value;
 
 
+
+
+		$('button').attr('disabled',true);
+		$.post("add_passenger.php",{
+			id:id,
+			route:route_number,
+			stop:stop_number
+		},function(data,status){
+			$('button').attr('disabled',false);
+			if(status==="success"){
 				alert(data);
-				if (data === 'success')
-					window.location.reload();
-				else alert(data);
-				saveButton.attr('disabled',false);
+				if(data==='success')document.forms['main-form'].reset();
 
-			});
-
-
-		}
-	});
+			}
+		})
+	}
 </script>
 </html>
 

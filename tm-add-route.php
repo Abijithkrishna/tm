@@ -210,16 +210,16 @@ printLeft();
 									</div>
 									<div class="form-actions">
 										<button onclick="send();" type="button" class="btn btn-primary">Save</button>
-										<a href="tm-vehicle-details.php">
+										<a href="tm-manage-routes.php">
 										<button type="button" class="btn" >Cancel</button>
 										</a>
 									</div>
 								</form>
 							</div>
 						</div>
+				</div>
 			</div>
 		</div>
-	</div>
 </body>
 <script>
 	function send(){

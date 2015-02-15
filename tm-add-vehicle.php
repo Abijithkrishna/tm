@@ -278,6 +278,7 @@ printLeft();
 			$('button').attr('disabled',false);
 			if(status==="success"){
 				alert(data);
+				if(data==="success")document.forms['main-form'].reset();
 			}
 		})
 	}

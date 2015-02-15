@@ -19,7 +19,7 @@ function checkGET($keys){
 //return - boolean
 function checkPOST($keys){
     foreach( $keys as $i){
-        if(!isset($_POST[$i])) return false;
+        if(!isset($_POST[$i])) { echo $i." required" ;return false;}
     }
     return true;
 }

@@ -153,7 +153,7 @@ printLeft();
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Vehicle Details</h1>
+						<h1>Manage Passenger</h1>
 					</div>
 					<div class="pull-right">
 					    <ul class="minitiles" style="display:inline !important;">
@@ -178,14 +178,14 @@ printLeft();
 							<div class="box-title">
 								<h3>
 									<i class="icon-table"></i>
-									Vehicle Details
+									Passenger Details
 								</h3>
 								<div class="pull-right" style="margin-right: 5px;">
 									<ul class="pull-right stats"><li class="lightred">
-											<a href="tm-add-vehicle.php">
+											<a href="tm-add-passenger.php">
 												<div  style="margin-right: 5px;">
 
-													<h3>Add Vehicle</h3>
+													<h3>Add Passenger</h3>
 
 												</div>
 											</a>
@@ -196,15 +196,11 @@ printLeft();
 								<table class="table table-hover table-nomargin table-bordered">
 									<thead>
 										<tr>
-											<th>Number</th>
-											<th>Type</th>
-											<th class='hidden-350'>Capacity</th>
-											<th class="hidden-480">Condition</th>
-											<th class='hidden-1024'>Status</th>
-											<th class="hidden-1024">Route</th>
-											<th class="hidden-1024">Driver</th>
-											<th class="hidden-1024">Conductor</th>
+											<th>ID</th>
+											<th>Route</th>
+											<th class='hidden-350'>Stop</th>
 											<th></th>
+
 										</tr>
 									</thead>
 									<tbody>
@@ -220,18 +216,16 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from tm_vehicle_details";
+								        	$sql="select * from tm_passengers";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 
 								        	while($row=mysqli_fetch_array($result))
 											{
-												echo '<tr><td>'.$row['number'].'</td><td>'.$row['type'].'</td><td class="hidden-350">'
-													.$row['capacity'].'</td><td class="hidden-480">'.$row['vehicle_condition']
-													.'</td><td class="hidden-1024">'.$row['vehicle_status'].'</td><td class="hidden-1024">'
-													.$row['route'].'</td><td class="hidden-1024">'.$row['driver'].'</td><td class="hidden-1024">'
-													.$row['conductor'].'</td><td><button class="edit btn btn-warning" value="'.$row['number']
-													.'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span><button class="delete btn btn-warning" value="'.$row['number']
+												echo '<tr><td>'.$row['id'].'</td><td>'.$row['route'].'</td><td class="hidden-350">'
+													.$row['stop'].'</td><td><button class="edit btn btn-warning" value="'.$row['id']
+													.'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span>
+                                            <button class="delete btn btn-warning" value="'.$row['id']
 													.'"><i class="icon-trash"></i>Delete</button></td></tr>';
 											}
 								        }
@@ -245,26 +239,24 @@ printLeft();
 			</div>
 		</div>
 </body>
-
 <script>
 	$(".edit").click(function () {
 		id=this.value;
-		window.location.href="tm-edit-vehicle.php?id="+id;
+		window.location.href="tm-edit-passenger.php?id="+id;
 	});
 	$(".delete").click(function () {
-		number=this.value;
-		var ans=confirm("Are you sure to delete route "+number);
+		id=this.value;
+		var ans=confirm("Are you sure to delete route "+id);
 		if(ans)
 		{
 			var saveButton=$(this);
 			saveButton.attr("disabled",true);
-			$.post("tm-delete-vehicle.php",{
-
-				number:number
+			$.post("tm-delete-passenger.php",{
+				id:id
 			},function(data,status){
 
 
-				alert(data);
+
 				if (data === 'success')
 					window.location.reload();
 				else alert(data);

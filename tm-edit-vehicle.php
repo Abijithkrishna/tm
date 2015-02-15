@@ -12,7 +12,7 @@ else {
     if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
-    $query = "select * from tm_bus_route where route_number=" . $id ."  limit 1";
+    $query = "select * from tm_vehicle_details where number='". $id."'  limit 1";
 
     if ($result=$dbconnection->query($query)){
         if($result->num_rows==1) {
@@ -43,8 +43,6 @@ else {
                 <link rel="stylesheet" href="css/style.css">
                 <!-- Color CSS -->
                 <link rel="stylesheet" href="css/themes.css">
-                <!-- Time Picker -->
-                <link rel="stylesheet" href="css/plugins/timepicker/bootstrap-timepicker.min.css" />
 
 
                 <!-- jQuery -->
@@ -73,8 +71,6 @@ else {
                 <script src="js/application.min.js"></script>
                 <!-- Just for demonstration -->
                 <script src="js/demonstration.min.js"></script>
-                <!-- Time picker js -->
-                <script src="js/plugins/timepicker/bootstrap-timepicker.min.js"></script>
                 <!-- Favicon -->
                 <link rel="shortcut icon" href="img/favicon.ico" />
                 <!-- Apple devices Homescreen icon -->
@@ -179,7 +175,7 @@ else {
                     <div class="container-fluid">
                         <div class="page-header">
                             <div class="pull-left">
-                                <h1>Edit Route</h1>
+                                <h1>Add Vehicle</h1>
                             </div>
                             <div class="pull-right">
                                 <ul class="minitiles" style="display:inline !important;">
@@ -201,54 +197,72 @@ else {
                     <div class="container-fluid">
                         <div class="box box-bordered box-color">
                             <div class="box-title">
-                                <h3><i class="icon-th-list"></i> Edit Route</h3>
+                                <h3><i class="icon-th-list"></i> New Vehicle</h3>
                             </div>
                             <div class="box-content nopadding">
-                                <form name="main-form"  action="tm-submit-edit.php"" method="POST" class='form-horizontal form-bordered'>
-                                <div class="control-group">
-                                    <label for="route-number" class="control-label">Route Number</label>
-                                    <div class="controls">
-                                        <input type="text" name="route-number"  id="route-number" placeholder="" class="input-xlarge" value="<?php echo $id ?>">
+                                <form name="main-form" action="tm-edit-vehicle-submit.php" method="POST" class='form-horizontal form-bordered'>
+                                    <div class="control-group">
+                                        <label for="number" class="control-label">Vehicle Number</label>
+                                        <div class="controls">
+                                            <input type="text" name="number" id="textfield" placeholder="Example: TN21AB1234" class="input-xlarge"
+                                                readonly value="<?php echo $id ?>">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="start" class="control-label"  >Starting Location</label>
-                                    <div class="controls">
-                                        <input type="text" name="start"  placeholder="Stop Number" class="input-xlarge" value="<?php echo $row['start_location'] ?>">
+                                    <div class="control-group">
+                                        <label for="type" class="control-label">Vehicle Type</label>
+                                        <div class="controls">
+                                            <select name="type" id="select" class='input-large'>
+                                                <option value="1" <?php if($row['type']==1) echo "selected"?> >BUS</option>
+                                                <option value="2" <?php if($row['type']==2) echo "selected"?> >MINI BUS</option>
+                                                <option value="3" <?php if($row['type']==3) echo "selected"?> >VAN</option>
+                                                <option value="4" <?php if($row['type']==4) echo "selected"?> >CAR</option>
+
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="end" class="control-label">Ending Location</label>
-                                    <div class="controls">
-                                        <input type="text" name="end"  placeholder="Stop Number" class="input-xlarge" value="<?php echo $row['end_location'] ?>">
+                                    <div class="control-group">
+                                        <label for="capacity" class="control-label">Capacity</label>
+                                        <div class="controls">
+                                            <input type="text" name="capacity" id="textfield" placeholder="Seat count"
+                                                   class="input-xlarge" value="<?php echo $row['capacity'] ?>">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="start-time" class="control-label">Start Time</label>
-                                    <div class="bootstrap-timepicker input-append controls" style="display:block;">
-                                        <input type="text" name="start-time" id="timepicker1" placeholder="" class="input-xlarge" value="<?php echo $row['start_time'] ?>">
-                                        <span class="add-on"><i class="icon-time"></i></span>
+                                    <div class="control-group">
+                                        <label for="condition" class="control-label">Condition</label>
+                                        <div class="controls">
+                                            <input type="text" name="condition" id="textfield" placeholder="" class="input-xlarge"
+                                                   value="<?php echo $row['vehicle_condition'] ?>" >
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-actions">
-                                    <button onclick="send();" type="button" class="btn btn-primary">Save</button>
-                                    <a href="tm-vehicle-details.php">
-                                        <button type="button" class="btn" >Cancel</button>
-                                    </a>
-                                </div>
+                                    <div class="control-group">
+                                        <label for="status" class="control-label">Status</label>
+                                        <div class="controls">
+                                            <input type="text" name="status" id="textfield" placeholder="" class="input-xlarge"
+                                                   value="<?php echo $row['vehicle_status'] ?>">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-actions">
+                                        <button  type="submit" class="btn btn-primary">Save</button>
+                                        <a href="tm-manage-vehicles.php">
+                                            <button type="button" class="btn" >Cancel</button>
+                                        </a>
+
+                                    </div>
                                 </form>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
             </body>
 
-
-            <script type="text/javascript">
-                $('#timepicker1').timepicker({minuteStep: 1});
-            </script>
             </html>
+
+
 
 
         <?php

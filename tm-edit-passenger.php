@@ -1,3 +1,26 @@
+<?php
+require_once "praveenlib.php";
+require_once "datas.php";
+
+$dbconnection = connectSQL($dbdetails);
+
+if(mysqli_connect_errno()) //Check if any error occurred on connection
+{
+    echo "db_connection_fail";
+}
+else {
+if (isset($_GET['id'])) {
+
+$id = $_GET['id'];
+$query = "select * from tm_passengers where id='". $id."'  limit 1";
+
+if ($result=$dbconnection->query($query)){
+if($result->num_rows==1) {
+
+
+$row = $result->fetch_array();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -153,7 +176,7 @@
         <div class="container-fluid">
             <div class="page-header">
                 <div class="pull-left">
-                    <h1>Route Details</h1>
+                    <h1>Assign Passenger</h1>
                 </div>
                 <div class="pull-right">
                     <ul class="minitiles" style="display:inline !important;">
@@ -172,23 +195,48 @@
                 </div>
             </div>
         </div>
-        <div class="row-fluid">
-            <div class="span6">
-                <div class="box">
-                    <div class="box-content">
-                        <form name="routesubmit" onsubmit="return false;" action="" method="POST" class='form-horizontal'>
-                            <div class="control-group">
-                                <label for="routenum" class="control-label">Route Number:</label>
-                                <div class="controls">
-                                    <input type="text" name="routenum" id="routenum" class="input-medium"/>
-                                    <button class="btn" type="submit">Submit</button>
-                                </div>
+        <div class="container-fluid">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="icon-th-list"></i> New Passenger</h3>
+                </div>
+                <div class="box-content nopadding">
+                    <form name="main-form"  action="tm-edit-passenger-submit.php" method="POST" class='form-horizontal form-bordered'>
+                        <div class="control-group">
+                            <label for="id" class="control-label">Passenger Id</label>
+                            <div class="controls">
+                                <input type="text" name="id" id="textfield" placeholder="" class="input-xlarge"
+                                    readonly value="<?php echo $row['id'] ?>">
                             </div>
-                            </form>
                         </div>
-                    </div>
+
+                        <div class="control-group">
+                            <label for="routenumber" class="control-label">Route Number</label>
+                            <div class="controls">
+                                <input type="text" name="route" id="textfield" placeholder="" class="input-xlarge"
+                                       value="<?php echo $row['route'] ?>">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="stopnumber" class="control-label">Stop Number</label>
+                            <div class="controls">
+                                <input type="text" name="stop" id="textfield" placeholder="" class="input-xlarge"
+                                       value="<?php echo $row['stop'] ?>">
+                            </div>
+                        </div>
+
+
+                        <div class="form-actions">
+                            <button  type="submit" class="btn btn-primary">Save</button>
+                            <a href="tm-manage-passenger.php">
+                                <button type="button" class="btn" >Cancel</button>
+                            </a>
+
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
 
     </div>
 </div>
@@ -196,3 +244,13 @@
 </body>
 </html>
 
+
+
+<?php
+}
+}else{
+    echo $dbconnection->error;
+}
+}
+}
+?>

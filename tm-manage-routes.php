@@ -254,15 +254,22 @@ printLeft();
 		 var ans=confirm("Are you sure to delete route "+id);
 		 if(ans)
 		 {
-			$(this).attr("disabled",true);
+			 var saveButton=$(this);
+			saveButton.attr("disabled",true);
 			 $.post("tm-delete-route.php",{
+
 				 id:id
-			 },function(data,status) {
-				 if (data === 'success')
-					 window.location.reload();
-				 else alert(data);
-				 $(this).attr('disabled',false);
-			 })
+			 },function(data,status){
+
+
+					 alert(data);
+					 if (data === 'success')
+						 window.location.reload();
+					 else alert(data);
+					 saveButton.attr('disabled',false);
+
+			 });
+
 
 		 }
 	 });

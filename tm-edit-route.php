@@ -204,12 +204,12 @@ else {
                                     <h3><i class="icon-th-list"></i> Edit Route</h3>
                                 </div>
                                 <div class="box-content nopadding">
-                                    <form name="main-form"  action="tm-submit-edit.php" method="POST" class='form-horizontal form-bordered'>
+                                    <form name="main-form"  action="tm-edit-route-submit.php" method="POST" class='form-horizontal form-bordered'>
                                     <div class="control-group">
                                         <label for="route-number" class="control-label" >Route Number</label>
                                         <div class="controls">
                                             <input type="text" name="number"  id="route-number" placeholder="" class="input-xlarge"
-                                                    disabled value="<?php echo $id ?>">
+                                                    readonly value="<?php echo $id ?>">
                                         </div>
                                     </div>
                                     <div class="control-group">

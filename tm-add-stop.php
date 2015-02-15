@@ -240,7 +240,7 @@ printLeft();
 									-->
 									<div class="form-actions">
 										<button onclick="send();" type="button" class="btn btn-primary">Save</button>
-										<a href="tm-vehicle-details.php">
+										<a href="tm-manage-stop.php">
 										<button type="button" class="btn" >Cancel</button>
 										</a>
 

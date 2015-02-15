@@ -21,11 +21,11 @@ if(checkPOST($keys)){
         $status=safeString($dbconnection,$_POST['status']);
         $verification=safeString($dbconnection,$_POST['verification']);
 
-        $query= "insert into tm_employee(id,role,name,license_number ,expiry,employee_status,verification)values("
-            .$id.",'".$role."','".$name."','".$license."','".$expiry."','".$status."','".$verification."')";
+        $query= "update tm_employee set role='".$role."',name='".$name."',license_number='".$license.
+            "' ,expiry='".$expiry."',employee_status='".$status."',verification='".$verification."' where id=".$id;
         $result=mysqli_query($dbconnection,$query);
         if($result){
-            echo "success";
+            header("location:tm-manage-employee.php");
         }else{
             echo "bd_error_1 ".mysqli_error($dbconnection);
         }
