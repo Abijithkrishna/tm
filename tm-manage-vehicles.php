@@ -152,7 +152,7 @@ printLeft();
 		<div id="main">
 			<div class="container-fluid">
 				<div class="page-header">
-					<div class="pull-left">d
+					<div class="pull-left">
 						<h1>Vehicle Details</h1>
 					</div>
 					<div class="pull-right">

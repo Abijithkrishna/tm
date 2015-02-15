@@ -153,7 +153,7 @@
         <div class="container-fluid">
             <div class="page-header">
                 <div class="pull-left">
-                    <h1>Assign Enployee</h1>
+                    <h1>Route Details</h1>
                 </div>
                 <div class="pull-right">
                     <ul class="minitiles" style="display:inline !important;">
@@ -172,7 +172,23 @@
                 </div>
             </div>
         </div>
-
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="box">
+                    <div class="box-content">
+                        <form action="test.php" method="POST" class='form-horizontal'>
+                            <div class="control-group">
+                                <label for="routenum" class="control-label">Route Number:</label>
+                                <div class="controls">
+                                    <input type="text" name="routenum" id="routenum" class="input-medium"/>
+                                    <button class="btn" type="submit">Submit</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     </div>
 </div>
