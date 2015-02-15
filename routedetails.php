@@ -181,7 +181,7 @@
                                 <label for="routenum" class="control-label">Route Number:</label>
                                 <div class="controls">
                                     <input type="text" name="routenum" id="routenum" class="input-medium"/>
-                                    <button class="btn" type="submit">Submit</button>
+                                    <button class="btn" type="submit" onclick="send()">Submit</button>
                                 </div>
                             </div>
                             </form>
@@ -192,6 +192,22 @@
 
     </div>
 </div>
+<script>
+    function send(){
+        var number=document.forms['routesubmit']['routenum'].value;
+
+        $('button').attr('disabled',true);
+        $.post("test.php",{
+
+            number:number,
+        },function(data,status){
+            $('button').attr('disabled',false);
+            if(status==="success"){
+                alert(data);
+            }
+        })
+    }
+</script>
 
 </body>
 </html>

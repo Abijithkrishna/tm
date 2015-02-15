@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2babd5a9-89b5-4163-8404-41c43a57d689" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms.php" afterPath="$PROJECT_DIR$/cms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routedetails.php" afterPath="$PROJECT_DIR$/routedetails.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cms.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8244406" vertical-offset="507" max-vertical-offset="1207">
-              <caret line="58" column="60" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
+            <state vertical-scroll-proportion="-6.6538463" vertical-offset="558" max-vertical-offset="1207">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -40,18 +42,18 @@
       <file leaf-file-name="tm-add-employee.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="4930">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="1037" max-vertical-offset="4930">
               <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routedetails.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routedetails.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routedetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.769231" vertical-offset="2832" max-vertical-offset="3468">
-              <caret line="180" column="47" selection-start-line="180" selection-start-column="47" selection-end-line="180" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.49119717" vertical-offset="3104" max-vertical-offset="3740">
+              <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -60,10 +62,22 @@
       <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="493">
-              <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+            <state vertical-scroll-proportion="-12.692307" vertical-offset="44" max-vertical-offset="629">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
-                <marker date="1423984550186" expanded="true" signature="282:328" placeholder="select * fro..tm_bus_route..." />
+                <marker date="1424029536337" expanded="true" signature="391:437" placeholder="select * fro..tm_bus_route..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_route.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/add_route.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.153846" vertical-offset="14" max-vertical-offset="663">
+              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+              <folding>
+                <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
@@ -72,21 +86,9 @@
       <file leaf-file-name="tm-add-route.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tm-add-route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308" vertical-offset="3706" max-vertical-offset="4369">
-              <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.9230769" vertical-offset="3230" max-vertical-offset="4369">
+              <caret line="196" column="42" selection-start-line="196" selection-start-column="42" selection-end-line="196" selection-end-column="42" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_route.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/add_route.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="663">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-              <folding>
-                <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -100,10 +102,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tm-manage-vehicles.php" />
-        <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/tm-add-route.php" />
-        <option value="$PROJECT_DIR$/routedetails.php" />
         <option value="$PROJECT_DIR$/cms.php" />
+        <option value="$PROJECT_DIR$/add_route.php" />
+        <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/routedetails.php" />
       </list>
     </option>
   </component>
@@ -168,6 +171,26 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -258,7 +281,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1423984550186" expanded="true" signature="282:328" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029536337" expanded="true" signature="391:437" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -318,14 +341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="4930">
-          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tm-manage-vehicles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4190141" vertical-offset="2380" max-vertical-offset="4352">
@@ -362,46 +377,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6538463" vertical-offset="558" max-vertical-offset="1207">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="1037" max-vertical-offset="4930">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tm-add-route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="3230" max-vertical-offset="4369">
+          <caret line="196" column="42" selection-start-line="196" selection-start-column="42" selection-end-line="196" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/add_route.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        <state vertical-scroll-proportion="-15.153846" vertical-offset="14" max-vertical-offset="663">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
             <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routedetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.769231" vertical-offset="2832" max-vertical-offset="3468">
-          <caret line="180" column="47" selection-start-line="180" selection-start-column="47" selection-end-line="180" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="493">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        <state vertical-scroll-proportion="-12.692307" vertical-offset="44" max-vertical-offset="629">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
-            <marker date="1423984550186" expanded="true" signature="282:328" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029536337" expanded="true" signature="391:437" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tm-add-route.php">
+    <entry file="file://$PROJECT_DIR$/routedetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308" vertical-offset="3706" max-vertical-offset="4369">
-          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8244406" vertical-offset="507" max-vertical-offset="1207">
-          <caret line="58" column="60" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.49119717" vertical-offset="3104" max-vertical-offset="3740">
+          <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
           <folding />
         </state>
       </provider>
