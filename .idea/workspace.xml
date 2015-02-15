@@ -60,10 +60,10 @@
       <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04225352" vertical-offset="44" max-vertical-offset="629">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.6109155" vertical-offset="27" max-vertical-offset="629">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding>
-                <marker date="1424029667617" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+                <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
               </folding>
             </state>
           </provider>
@@ -279,7 +279,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424029667617" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -419,10 +419,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04225352" vertical-offset="44" max-vertical-offset="629">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.6109155" vertical-offset="27" max-vertical-offset="629">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding>
-            <marker date="1424029667617" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>

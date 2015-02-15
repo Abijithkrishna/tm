@@ -21,7 +21,7 @@ if(checkPOST($keys)){
         if($result)
         {
             $row = mysqli_fetch_array($result);
-            echo $row['route'];
+            echo $row['start_location'];
         }
         else
         {
