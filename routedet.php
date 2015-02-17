@@ -153,7 +153,7 @@
         <div class="container-fluid">
             <div class="page-header">
                 <div class="pull-left">
-                    <h1>Route Details</h1>
+                    <h1>Route Report</h1>
                 </div>
                 <div class="pull-right">
                     <ul class="minitiles" style="display:inline !important;">
@@ -178,7 +178,7 @@
                     <div class="box-title">
                         <h3>
                             <i class="icon-table"></i>
-                            Vehicle Details
+                            Routes
                         </h3>
                     </div>
                     <div class="box-content nopadding">
@@ -211,7 +211,7 @@
                                 while($row=mysqli_fetch_array($result))
                                 {
                                     echo '<tr><td>'.$row['route'].'</td><td>'.$row['number'].'</td><td class="hidden-350">'
-                                    .$row['driver'].'</td><td><button class="edit btn btn-warning" value="'.$row['route'].'">List Stops</button>
+                                    .$row['driver'].'</td><td><button class="list btn btn-warning" value="'.$row['route'].'">List Stops</button>
                                     </td></tr>';
                                 }
                             }
@@ -225,7 +225,12 @@
     </div>
     </div>
 </div>
-
+<script>
+$(".list").click(function(){
+    id=this.value;
+    window.location.href="liststops.php?id="+id;
+});
+</script>
 </body>
 </html>
 
