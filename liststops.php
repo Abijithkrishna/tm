@@ -198,12 +198,12 @@ else
     ?>
                 <div class="row-fluid">
                     <div class="span11">
-                        <form action="#" method="POST" class="form-horizontal">
+                        <form class="form-horizontal">
                             <div class="control-group">
                                 <label for="textfield" class="control-label">Route Number</label>
                                 <div class="controls">
                                     <input name="routenum" id="routenum" class="input-small" type="text" value="<?php echo $id;?>">
-                                    <button type="submit" class="btn btn-primary liststops">List Stops</button>
+                                    <button type="button" class="btn btn-primary liststops">List Stops</button>
                                 </div>
                             </div>
                         </form>
@@ -259,6 +259,12 @@ else
         </div>
     </body>
 <script>
+    $(".liststops").click(function(){
+        //var id=document.getElementById('routenum').value;
+        var id=$("#routenum").val();
+        window.location.href="liststops.php?id=" + id;
+    });
+    /*
     $(".liststops").click(function (){
         var route=document.getElementById("routenum").value;
         var listbtn=$(this);
@@ -269,7 +275,7 @@ else
                 listbtn.setAttribute("disabled",false);
             }
         );
-    });
+    });*/
 </script>
 </html>
 
