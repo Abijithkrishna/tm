@@ -4,8 +4,6 @@
     <list default="true" id="2babd5a9-89b5-4163-8404-41c43a57d689" name="Default" comment="">
       <change type="DELETED" beforePath="C:\wamp\www\tm\routedet.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms.php" afterPath="$PROJECT_DIR$/cms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liststops.php" afterPath="$PROJECT_DIR$/liststops.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routedetails.php" afterPath="$PROJECT_DIR$/routedetails.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tm.iws" />
@@ -38,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cms.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49731183" vertical-offset="818" max-vertical-offset="1207">
-              <caret line="59" column="3" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+            <state vertical-scroll-proportion="-7.769231" vertical-offset="801" max-vertical-offset="1292">
+              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -51,72 +49,35 @@
       <file leaf-file-name="tm-add-employee.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="4930">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="1037" max-vertical-offset="4930">
               <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.php">
+      <file leaf-file-name="routedetails.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routedetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
-              </folding>
+            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="4114">
+              <caret line="10" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="liststops.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liststops.php">
+      <file leaf-file-name="vehiclereport.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vehiclereport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3846154" vertical-offset="4383" max-vertical-offset="4964">
-              <caret line="263" column="19" selection-start-line="263" selection-start-column="19" selection-end-line="263" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.82451254" vertical-offset="3291" max-vertical-offset="4080">
+              <caret line="211" column="83" selection-start-line="211" selection-start-column="83" selection-end-line="211" selection-end-column="83" />
               <folding>
-                <marker date="1424442525976" expanded="true" signature="10037:10083" placeholder="..." />
-                <marker date="1424442525976" expanded="true" signature="11115:11164" placeholder="select * fro..tm_bus_stop..." />
-                <marker date="1424442525976" expanded="true" signature="11512:11647" placeholder="..." />
-                <marker date="1424442525976" expanded="true" signature="11512:11682" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getstoplist.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getstoplist.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-              <folding>
-                <marker date="1424393937033" expanded="true" signature="367:388" placeholder="select * fro..tm_bus_route..." />
-                <marker date="1424393937033" expanded="true" signature="367:412" placeholder="select * fro..tm_bus_route..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tm-manage-vehicles.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tm-manage-vehicles.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4310" max-vertical-offset="4862">
-              <caret line="272" column="13" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
-              <folding>
-                <marker date="1424024236612" expanded="true" signature="7620:7652" placeholder="select * fro..tm_vehicle_details..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_route.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/add_route.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="265" max-vertical-offset="663">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1424460206064" expanded="true" signature="9078:9110" placeholder="select * fro..tm_vehicle_details..." />
+                <marker date="1424460206064" expanded="true" signature="9340:9476" placeholder="..." />
+                <marker date="1424460206064" expanded="true" signature="9470:9471" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -139,6 +100,7 @@
         <option value="$PROJECT_DIR$/getstoplist.php" />
         <option value="$PROJECT_DIR$/liststops.php" />
         <option value="$PROJECT_DIR$/cms.php" />
+        <option value="$PROJECT_DIR$/vehiclereport.php" />
       </list>
     </option>
   </component>
@@ -245,10 +207,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -294,7 +256,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="265" max-vertical-offset="663">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
+            <marker date="1424024235616" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -320,10 +282,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4199">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424442525976" expanded="true" signature="10037:10083" placeholder="..." />
-            <marker date="1424442525976" expanded="true" signature="11115:11164" placeholder="select * fro..tm_bus_stop..." />
-            <marker date="1424442525976" expanded="true" signature="11512:11647" placeholder="..." />
-            <marker date="1424442525976" expanded="true" signature="11512:11682" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_stop..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -333,7 +295,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="629">
           <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
-            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -350,7 +312,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="663">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
-            <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
+            <marker date="1424024235616" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -383,10 +345,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3757">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424442525976" expanded="true" signature="10037:10083" placeholder="..." />
-            <marker date="1424442525976" expanded="true" signature="11115:11164" placeholder="select * fro..tm_bus_stop..." />
-            <marker date="1424442525976" expanded="true" signature="11512:11647" placeholder="..." />
-            <marker date="1424442525976" expanded="true" signature="11512:11682" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_stop..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -396,7 +358,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="629">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -413,7 +375,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="663">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
-            <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
+            <marker date="1424024235616" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -446,7 +408,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -456,7 +418,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="663">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
-            <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
+            <marker date="1424024235616" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -489,7 +451,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
@@ -575,30 +537,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="4930">
-          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add_route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="265" max-vertical-offset="663">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <marker date="1424024235616" expanded="true" signature="559:696" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tm-manage-vehicles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4310" max-vertical-offset="4862">
-          <caret line="272" column="13" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
-          <folding>
-            <marker date="1424024236612" expanded="true" signature="7620:7652" placeholder="select * fro..tm_vehicle_details..." />
+            <marker date="1424024235616" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -608,40 +552,81 @@
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="629">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <marker date="1424029810144" expanded="true" signature="370:416" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424029810144" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/getstoplist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
+        <state vertical-scroll-proportion="0.86290324" vertical-offset="240" max-vertical-offset="680">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding>
-            <marker date="1424393937033" expanded="true" signature="367:388" placeholder="select * fro..tm_bus_route..." />
-            <marker date="1424393937033" expanded="true" signature="367:412" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424393937033" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
+            <marker date="1424393937033" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_route..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/liststops.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3846154" vertical-offset="4383" max-vertical-offset="4964">
+        <state vertical-scroll-proportion="0.24512535" vertical-offset="4383" max-vertical-offset="4964">
           <caret line="263" column="19" selection-start-line="263" selection-start-column="19" selection-end-line="263" selection-end-column="19" />
           <folding>
-            <marker date="1424442525976" expanded="true" signature="10037:10083" placeholder="..." />
-            <marker date="1424442525976" expanded="true" signature="11115:11164" placeholder="select * fro..tm_bus_stop..." />
-            <marker date="1424442525976" expanded="true" signature="11512:11647" placeholder="..." />
-            <marker date="1424442525976" expanded="true" signature="11512:11682" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="select * fro..tm_bus_stop..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424442525976" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tm-manage-vehicles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8746518" vertical-offset="4310" max-vertical-offset="4862">
+          <caret line="272" column="13" selection-start-line="272" selection-start-column="13" selection-end-line="272" selection-end-column="13" />
+          <folding>
+            <marker date="1424024236612" expanded="true" signature="-1:-1" placeholder="select * fro..tm_vehicle_details..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="1037" max-vertical-offset="4930">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routedetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="4114">
+          <caret line="10" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cms.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49731183" vertical-offset="818" max-vertical-offset="1207">
-          <caret line="59" column="3" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+        <state vertical-scroll-proportion="-7.769231" vertical-offset="801" max-vertical-offset="1292">
+          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehiclereport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82451254" vertical-offset="3291" max-vertical-offset="4080">
+          <caret line="211" column="83" selection-start-line="211" selection-start-column="83" selection-end-line="211" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1424460206064" expanded="true" signature="9078:9110" placeholder="select * fro..tm_vehicle_details..." />
+            <marker date="1424460206064" expanded="true" signature="9340:9476" placeholder="..." />
+            <marker date="1424460206064" expanded="true" signature="9470:9471" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

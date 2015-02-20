@@ -58,7 +58,12 @@ function printLeft(){?>
                 <li>
                     <a href="routedetails.php">Route Reports</a>
                 </li>
-git
+                <li>
+                    <a href="liststops.php">List Report</a>
+                </li>
+                <li>
+                    <a href="vehiclereport.php">Vehicle Reports</a>
+                </li>
             </ul>
         </div>
     </div>

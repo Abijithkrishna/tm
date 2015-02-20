@@ -153,7 +153,7 @@
         <div class="container-fluid">
             <div class="page-header">
                 <div class="pull-left">
-                    <h1>Route Report</h1>
+                    <h1>Vehicle Report</h1>
                 </div>
                 <div class="pull-right">
                     <ul class="minitiles" style="display:inline !important;">
@@ -178,17 +178,16 @@
                     <div class="box-title">
                         <h3>
                             <i class="icon-table"></i>
-                            Routes
+                            Vehicles
                         </h3>
                     </div>
                     <div class="box-content nopadding">
                         <table class="table table-hover table-nomargin table-bordered">
                             <thead>
                             <tr>
-                                <th>Route</th>
-                                <th>Number</th>
-                                <th class='hidden-350'>Driver</th>
-                                <th></th>
+                                <th>Vehicle Number</th>
+                                <th>Actual Passengers</th>
+                                <th class='hidden-350'>Actual Capacity</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -210,9 +209,8 @@
 
                                 while($row=mysqli_fetch_array($result))
                                 {
-                                    echo '<tr><td>'.$row['route'].'</td><td>'.$row['number'].'</td><td class="hidden-350">'
-                                    .$row['driver'].'</td><td><button class="list btn btn-warning" value="'.$row['route'].'">List Stops</button>
-                                    </td></tr>';
+                                    echo '<tr><td>'.$row['number'].'</td><td>Actual</td><td class="hidden-350">'
+                                        .$row['capacity'].'</td></tr>';
                                 }
                             }
                             ?>
@@ -223,13 +221,13 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
 </div>
 <script>
-$(".list").click(function(){
-    id=this.value;
-    window.location.href="liststops.php?id="+id;
-});
+    $(".list").click(function(){
+        id=this.value;
+        window.location.href="liststops.php?id="+id;
+    });
 </script>
 </body>
 </html>
