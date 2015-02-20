@@ -9,10 +9,11 @@ if(mysqli_connect_errno()) //Check if any error occurred on connection
     echo "db_connection_fail";
 }
 else
-{?>
+{
+?>
 
-    <!doctype html>
-    <html>
+<!doctype html>
+<html>
     <head>
         <title>Edufee</title>
         <meta charset="utf8">
@@ -70,146 +71,210 @@ else
     </head>
 
     <body>
-    <div id="navigation">
-        <div class="container-fluid">
-            <a href="#" id="brand"></a>
-            <a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
-            <ul class='main-nav'>
-                <li>
-                    <a href="index.html">
-                        <i class="icon-home"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-
-
-            </ul>
-            <div class="user">
-                <ul class="icon-nav">
-                    <li class="dropdown sett">
-                        <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-cog"></i></a>
-                        <ul class="dropdown-menu pull-right theme-settings">
-                            <li>
-                                <span>Layout-width</span>
-                                <div class="version-toggle">
-                                    <a href="#" class='set-fixed'>Fixed</a>
-                                    <a href="#" class="active set-fluid">Fluid</a>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Topbar</span>
-                                <div class="topbar-toggle">
-                                    <a href="#" class='set-topbar-fixed'>Fixed</a>
-                                    <a href="#" class="active set-topbar-default">Default</a>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Sidebar</span>
-                                <div class="sidebar-toggle">
-                                    <a href="#" class='set-sidebar-fixed'>Fixed</a>
-                                    <a href="#" class="active set-sidebar-default">Default</a>
-                                </div>
-                            </li>
-                        </ul>
+        <div id="navigation">
+            <div class="container-fluid">
+                <a href="#" id="brand"></a>
+                <a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
+                <ul class='main-nav'>
+                    <li>
+                        <a href="index.html">
+                            <i class="icon-home"></i>
+                            <span>Dashboard</span>
+                        </a>
                     </li>
-                    <li class='dropdown colo'>
-                        <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-tint"></i></a>
-                        <ul class="dropdown-menu pull-right theme-colors">
-                            <li class="subtitle">
-                                Predefined colors
-                            </li>
-                            <li>
-                                <span class='red'></span>
-                                <span class='orange'></span>
-                                <span class='green'></span>
-                                <span class="brown"></span>
-                                <span class="blue"></span>
-                                <span class='lime'></span>
-                                <span class="teal"></span>
-                                <span class="purple"></span>
-                                <span class="pink"></span>
-                                <span class="magenta"></span>
-                                <span class="grey"></span>
-                                <span class="darkblue"></span>
-                                <span class="lightred"></span>
-                                <span class="lightgrey"></span>
-                                <span class="satblue"></span>
-                                <span class="satgreen"></span>
-                            </li>
-                        </ul>
-                    </li>
+
 
                 </ul>
-                <div class="dropdown">
-                    <a href="#" class='dropdown-toggle' data-toggle="dropdown">John Doe <img src="img/demo/user-avatar.jpg" alt=""></a>
-                    <ul class="dropdown-menu pull-right">
-                        <li>
-                            <a href="more-userprofile.html">Edit profile</a>
+                <div class="user">
+                    <ul class="icon-nav">
+                        <li class="dropdown sett">
+                            <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-cog"></i></a>
+                            <ul class="dropdown-menu pull-right theme-settings">
+                                <li>
+                                    <span>Layout-width</span>
+                                    <div class="version-toggle">
+                                        <a href="#" class='set-fixed'>Fixed</a>
+                                        <a href="#" class="active set-fluid">Fluid</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Topbar</span>
+                                    <div class="topbar-toggle">
+                                        <a href="#" class='set-topbar-fixed'>Fixed</a>
+                                        <a href="#" class="active set-topbar-default">Default</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Sidebar</span>
+                                    <div class="sidebar-toggle">
+                                        <a href="#" class='set-sidebar-fixed'>Fixed</a>
+                                        <a href="#" class="active set-sidebar-default">Default</a>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="#">Account settings</a>
+                        <li class='dropdown colo'>
+                            <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-tint"></i></a>
+                            <ul class="dropdown-menu pull-right theme-colors">
+                                <li class="subtitle">
+                                    Predefined colors
+                                </li>
+                                <li>
+                                    <span class='red'></span>
+                                    <span class='orange'></span>
+                                    <span class='green'></span>
+                                    <span class="brown"></span>
+                                    <span class="blue"></span>
+                                    <span class='lime'></span>
+                                    <span class="teal"></span>
+                                    <span class="purple"></span>
+                                    <span class="pink"></span>
+                                    <span class="magenta"></span>
+                                    <span class="grey"></span>
+                                    <span class="darkblue"></span>
+                                    <span class="lightred"></span>
+                                    <span class="lightgrey"></span>
+                                    <span class="satblue"></span>
+                                    <span class="satgreen"></span>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="more-login.html">Sign out</a>
-                        </li>
+
                     </ul>
+                    <div class="dropdown">
+                        <a href="#" class='dropdown-toggle' data-toggle="dropdown">John Doe <img src="img/demo/user-avatar.jpg" alt=""></a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="more-userprofile.html">Edit profile</a>
+                            </li>
+                            <li>
+                                <a href="#">Account settings</a>
+                            </li>
+                            <li>
+                                <a href="more-login.html">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid" id="content">
+        <div class="container-fluid" id="content">
     <?php
     require_once "cms.php";
     printLeft();
     ?>
-    <div id="main">
-    <div class="container-fluid">
-        <div class="page-header">
-            <div class="pull-left">
-                <h1>Route Details</h1>
-            </div>
-            <div class="pull-right">
-                <ul class="minitiles" style="display:inline !important;">
-                    <li><a href="tm_main.html"><img src="img/tm_icon.png" alt=""></a></li>
+            <div id="main">
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <div class="pull-left">
+                            <h1>Route Stops</h1>
+                        </div>
+                        <div class="pull-right">
+                            <ul class="minitiles" style="display:inline !important;">
+                                <li><a href="tm_main.html"><img src="img/tm_icon.png" alt=""></a></li>
 
-                    <li><a href="http://www.edufee.com/subscribe_donation/"><img src="img/dm_icon.png" alt=""></a></li>
+                                <li><a href="http://www.edufee.com/subscribe_donation/"><img src="img/dm_icon.png" alt=""></a></li>
 
-                    <li> <a href="http://www.edufee.com/SIS/home/"><img src="img/sis_icon.png" alt="" style="border:none;" border="0"/></a> </li>
+                                <li> <a href="http://www.edufee.com/SIS/home/"><img src="img/sis_icon.png" alt="" style="border:none;" border="0"/></a> </li>
 
-                    <li><a href="http://www.edufee.com/hrm/symfony/web/index.php/admin/LandingPage"><img src="img/hr_icon.png" alt=""></a></li>
-                    <li> <a href="http://www.edufee.com/openbiblio/catalog/home.php"><img src="img/lms_icon.png" alt="" style="border:none;" border="0"/></a> </li>
+                                <li><a href="http://www.edufee.com/hrm/symfony/web/index.php/admin/LandingPage"><img src="img/hr_icon.png" alt=""></a></li>
+                                <li> <a href="http://www.edufee.com/openbiblio/catalog/home.php"><img src="img/lms_icon.png" alt="" style="border:none;" border="0"/></a> </li>
 
-                    <li><a href="http://www.edufee.com/psp_dashboard/psp"><img src="img/psp_icon.png" alt="" border="0"/>
-                        </a></li>
-                </ul>
+                                <li><a href="http://www.edufee.com/psp_dashboard/psp"><img src="img/psp_icon.png" alt="" border="0"/>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    <?php
+    if (isset($_GET['id']))
+    {
+        $id = $_GET['id'];
+    }
+    else
+    {
+        $id="";
+    }
+    ?>
+                <div class="row-fluid">
+                    <div class="span11">
+                        <form action="#" method="POST" class="form-horizontal">
+                            <div class="control-group">
+                                <label for="textfield" class="control-label">Route Number</label>
+                                <div class="controls">
+                                    <input name="routenum" id="routenum" class="input-small" type="text" value="<?php echo $id;?>">
+                                    <button type="submit" class="btn btn-primary liststops">List Stops</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="box box-color box-bordered">
+                            <div class="box-title">
+                                <h3>
+                                    <i class="icon-table"></i>
+                                    Stops
+                                </h3>
+                            </div>
+                            <div class="box-content nopadding">
+                                <table class="table table-hover table-nomargin table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th class="hidden-350">Distance</th>
+                                            <th class="hidden-480">Estimated Time</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    if($id!="")
+                                    {
+                                        $query = "select * from tm_bus_stop where route='". $id ."'";
+
+
+                                        if ($result = $dbconnection->query($query)) {
+                                            if ($result) {
+
+
+                                                while($row = $result->fetch_array())
+                                                {
+                                                    echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['distance']."</td>
+                                                    <td>".$row['estimated_time']."</td></tr>";
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row-fluid">
-    <div class="span12">
-    <div class="box box-color box-bordered">
-    <div class="box-title">
-        <h3>
-            <i class="icon-table"></i>
-            Route Details
-        </h3>
-    </div>
-    <div class="box-content nopadding">
-    <table class="table table-hover table-nomargin table-bordered">
-    <thead>
-    <tr>
-        <th>Route</th>
-        <th>Number</th>
-        <th class='hidden-350'>Driver</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
+    </body>
+<script>
+    $(".liststops").click(function (){
+        var route=document.getElementById("routenum").value;
+        var listbtn=$(this);
+        listbtn.setAttribute("disabled",true)
+        $.post("getstoplist.php",{route:route},
+            function(data,status){
 
+                listbtn.setAttribute("disabled",false);
+            }
+        );
+    });
+</script>
+</html>
 
 <?php
 }
 ?>
-
 
 
