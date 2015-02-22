@@ -186,8 +186,8 @@
                             <thead>
                             <tr>
                                 <th>Vehicle Number</th>
-                                <th>Actual Passengers</th>
-                                <th class='hidden-350'>Actual Capacity</th>
+                                <th>Total Passengers</th>
+                                <th class='hidden-350'>Capacity</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -209,7 +209,9 @@
 
                                 while($row=mysqli_fetch_array($result))
                                 {
-                                    echo '<tr><td>'.$row['number'].'</td><td>Actual</td><td class="hidden-350">'
+                                    $sql1="select * from tm_student_details where route=".$row['route']."";
+                                    $capa=mysqli_num_rows(mysqli_query($dbconnection,$sql1));
+                                    echo '<tr><td>'.$row['number'].'</td><td>'.$capa.'</td><td class="hidden-350">'
                                         .$row['capacity'].'</td></tr>';
                                 }
                             }

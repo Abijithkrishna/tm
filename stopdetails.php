@@ -167,7 +167,7 @@ else
                 <div class="container-fluid">
                     <div class="page-header">
                         <div class="pull-left">
-                            <h1>Route Stops</h1>
+                            <h1>Route Passengers</h1>
                         </div>
                         <div class="pull-right">
                             <ul class="minitiles" style="display:inline !important;">
@@ -187,29 +187,26 @@ else
                     </div>
                 </div>
     <?php
-    if (isset($_GET['id']))
+    if (isset($_GET['ls']))
     {
-        $id = $_GET['id'];
+        $id = $_GET['ls'];
     }
     else
     {
-        $id="";
+        $ls="";
     }
     ?>
                 <div class="row-fluid">
-                    <div class="span10">
+                    <div class="span11">
                         <form class="form-horizontal">
                             <div class="control-group">
                                 <label for="textfield" class="control-label">Route Number</label>
                                 <div class="controls">
                                     <input name="routenum" id="routenum" class="input-small" type="text" value="<?php echo $id;?>">
-                                    <button type="button" class="btn btn-primary liststops">List Stops</button>
+                                    <button type="button" class="btn btn-primary passengers">List Stops</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <div class="span1">
-                        <button class="btn btn-primary passengers" type="button">Passengers</button>
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -262,27 +259,11 @@ else
         </div>
     </body>
 <script>
-    $(".liststops").click(function(){
-        //var id=document.getElementById('routenum').value;
-        var id=$("#routenum").val();
-        window.location.href="liststops.php?id=" + id;
-    });
     $(".passengers").click(function(){
+        //var id=document.getElementById('routenum').value;
         var ls=$("#routenum").val();
-        window.location.href="stopdetails.php?ls=" + ls;
+        window.location.href="liststops.php?ls=" + ls;
     });
-    /*
-    $(".liststops").click(function (){
-        var route=document.getElementById("routenum").value;
-        var listbtn=$(this);
-        listbtn.setAttribute("disabled",true)
-        $.post("getstoplist.php",{route:route},
-            function(data,status){
-
-                listbtn.setAttribute("disabled",false);
-            }
-        );
-    });*/
 </script>
 </html>
 
