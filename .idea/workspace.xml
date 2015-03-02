@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2babd5a9-89b5-4163-8404-41c43a57d689" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_employee.php" afterPath="$PROJECT_DIR$/add_employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_passenger.php" afterPath="$PROJECT_DIR$/add_passenger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stopdetails.php" afterPath="$PROJECT_DIR$/stopdetails.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-delete-employee.php" afterPath="$PROJECT_DIR$/tm-delete-employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-delete-passenger.php" afterPath="$PROJECT_DIR$/tm-delete-passenger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-edit-employee-submit.php" afterPath="$PROJECT_DIR$/tm-edit-employee-submit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-edit-employee.php" afterPath="$PROJECT_DIR$/tm-edit-employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-edit-passenger-submit.php" afterPath="$PROJECT_DIR$/tm-edit-passenger-submit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-edit-passenger.php" afterPath="$PROJECT_DIR$/tm-edit-passenger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-edit-route-submit.php" afterPath="$PROJECT_DIR$/tm-edit-route-submit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-manage-employee.php" afterPath="$PROJECT_DIR$/tm-manage-employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tm-manage-passenger.php" afterPath="$PROJECT_DIR$/tm-manage-passenger.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tm.iws" />
@@ -67,12 +79,13 @@
       <file leaf-file-name="vehiclereport.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vehiclereport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82451254" vertical-offset="3291" max-vertical-offset="4080">
-              <caret line="211" column="83" selection-start-line="211" selection-start-column="83" selection-end-line="211" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.58774376" vertical-offset="3325" max-vertical-offset="4114">
+              <caret line="208" column="0" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
               <folding>
-                <marker date="1424460206064" expanded="true" signature="9078:9110" placeholder="select * fro..tm_vehicle_details..." />
-                <marker date="1424460206064" expanded="true" signature="9340:9476" placeholder="..." />
-                <marker date="1424460206064" expanded="true" signature="9470:9471" placeholder="..." />
+                <marker date="1424607950426" expanded="true" signature="9070:9102" placeholder="select * fro..tm_vehicle_details..." />
+                <marker date="1424607950426" expanded="true" signature="9330:9375" placeholder="select * fro..tm_student_details..." />
+                <marker date="1424607950426" expanded="true" signature="9575:9673" placeholder="..." />
+                <marker date="1424607950426" expanded="true" signature="9667:9668" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -175,15 +188,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -206,7 +219,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -217,13 +230,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -276,9 +289,47 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1424460206064" expanded="true" signature="9078:9110" placeholder="select * fro..tm_vehicle_details..." />
-            <marker date="1424460206064" expanded="true" signature="9340:9476" placeholder="..." />
-            <marker date="1424460206064" expanded="true" signature="9470:9471" placeholder="..." />
+            <marker date="1424607950426" expanded="true" signature="9070:9102" placeholder="select * fro..tm_vehicle_details..." />
+            <marker date="1424607950426" expanded="true" signature="9330:9375" placeholder="select * fro..tm_student_details..." />
+            <marker date="1424607950426" expanded="true" signature="9575:9673" placeholder="..." />
+            <marker date="1424607950426" expanded="true" signature="9667:9668" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="801" max-vertical-offset="1292">
+          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tm-add-employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="4930">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routedetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="4114">
+          <caret line="10" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehiclereport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1424607950426" expanded="true" signature="9070:9102" placeholder="select * fro..tm_vehicle_details..." />
+            <marker date="1424607950426" expanded="true" signature="9330:9375" placeholder="select * fro..tm_student_details..." />
+            <marker date="1424607950426" expanded="true" signature="9575:9673" placeholder="..." />
+            <marker date="1424607950426" expanded="true" signature="9667:9668" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -594,12 +645,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vehiclereport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82451254" vertical-offset="3291" max-vertical-offset="4080">
-          <caret line="211" column="83" selection-start-line="211" selection-start-column="83" selection-end-line="211" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.58774376" vertical-offset="3325" max-vertical-offset="4114">
+          <caret line="208" column="0" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
-            <marker date="1424460206064" expanded="true" signature="9078:9110" placeholder="select * fro..tm_vehicle_details..." />
-            <marker date="1424460206064" expanded="true" signature="9340:9476" placeholder="..." />
-            <marker date="1424460206064" expanded="true" signature="9470:9471" placeholder="..." />
+            <marker date="1424607950426" expanded="true" signature="9070:9102" placeholder="select * fro..tm_vehicle_details..." />
+            <marker date="1424607950426" expanded="true" signature="9330:9375" placeholder="select * fro..tm_student_details..." />
+            <marker date="1424607950426" expanded="true" signature="9575:9673" placeholder="..." />
+            <marker date="1424607950426" expanded="true" signature="9667:9668" placeholder="..." />
           </folding>
         </state>
       </provider>

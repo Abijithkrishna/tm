@@ -21,7 +21,7 @@ if(checkPOST($keys)){
         $status=safeString($dbconnection,$_POST['status']);
         $verification=safeString($dbconnection,$_POST['verification']);
 
-        $query= "insert into tm_employee(id,role,name,license_number ,expiry,employee_status,verification)values("
+        $query= "insert into employee(id,role,name,license_number ,expiry,employee_status,verification)values("
             .$id.",'".$role."','".$name."','".$license."','".$expiry."','".$status."','".$verification."')";
         $result=mysqli_query($dbconnection,$query);
         if($result){

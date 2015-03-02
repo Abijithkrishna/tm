@@ -218,7 +218,8 @@
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_employee";
+                                    
+                                    $sql="select * from employee";
 
                                     $result=mysqli_query($dbconnection,$sql);
 

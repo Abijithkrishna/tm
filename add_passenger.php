@@ -18,7 +18,7 @@ if(checkPOST($keys)){
         $stop=safeString($dbconnection,$_POST['stop']);
 
 
-        $query= "insert into tm_passengers (id,route,stop)values("
+        $query= "insert into tm_student_details (id,route,stop)values("
             .$id.",".$route.",".$stop.")";
         $result=mysqli_query($dbconnection,$query);
         if($result){

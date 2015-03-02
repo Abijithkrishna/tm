@@ -193,7 +193,7 @@ else
     }
     else
     {
-        $ls="";
+        $id="";
     }
     ?>
                 <div class="row-fluid">
@@ -203,7 +203,7 @@ else
                                 <label for="textfield" class="control-label">Route Number</label>
                                 <div class="controls">
                                     <input name="routenum" id="routenum" class="input-small" type="text" value="<?php echo $id;?>">
-                                    <button type="button" class="btn btn-primary passengers">List Stops</button>
+                                    <button type="button" class="btn btn-primary passengers">List Passengers</button>
                                 </div>
                             </div>
                         </form>
@@ -215,23 +215,23 @@ else
                             <div class="box-title">
                                 <h3>
                                     <i class="icon-table"></i>
-                                    Stops
+                                    Passengers
                                 </h3>
                             </div>
                             <div class="box-content nopadding">
                                 <table class="table table-hover table-nomargin table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
+                                            <th>Stop</th>
                                             <th>Name</th>
-                                            <th class="hidden-350">Distance</th>
-                                            <th class="hidden-480">Estimated Time</th>
+                                            <th class="hidden-350">Passenger Id</th>
+                                            <th class="hidden-480">Passenger Name</th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    if($id!="")
+                                    if($id !="")
                                     {
                                         $query = "select * from tm_bus_stop where route='". $id ."'";
 
@@ -242,8 +242,21 @@ else
 
                                                 while($row = $result->fetch_array())
                                                 {
-                                                    echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>".$row['distance']."</td>
-                                                    <td>".$row['estimated_time']."</td></tr>";
+                                                    echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>";
+                                                    $sql="select * from tm_student_details where route='".$id."&& stop='".$row['id']."'";
+
+echo "hi";                                                    if ($result1 = $dbconnection->query($sql)) {
+                                            
+
+
+                                                while($row1 = $result1->fetch_array())
+                                                        {
+
+                                                        echo $row1['id']."<br>";
+                                                        }
+                                                    
+                                                }
+                                                    echo "</td><td></td>";
                                                 }
                                             }
                                         }
@@ -262,7 +275,7 @@ else
     $(".passengers").click(function(){
         //var id=document.getElementById('routenum').value;
         var ls=$("#routenum").val();
-        window.location.href="liststops.php?ls=" + ls;
+        window.location.href="stopdetails.php?ls=" + ls;
     });
 </script>
 </html>
