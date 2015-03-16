@@ -17,6 +17,10 @@
     <!-- jQuery UI -->
     <link rel="stylesheet" href="css/plugins/jquery-ui/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="css/plugins/jquery-ui/smoothness/jquery.ui.theme.css">
+    <!-- dataTables -->
+    <link rel="stylesheet" href="css/plugins/datatable/TableTools.css">
+    <!-- chosen -->
+    <link rel="stylesheet" href="css/plugins/chosen/chosen.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Color CSS -->
@@ -42,7 +46,14 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Bootbox -->
     <script src="js/plugins/bootbox/jquery.bootbox.js"></script>
-
+    <!-- dataTables -->
+    <script src="js/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="js/plugins/datatable/TableTools.min.js"></script>
+    <script src="js/plugins/datatable/ColReorder.min.js"></script>
+    <script src="js/plugins/datatable/ColVis.min.js"></script>
+    <script src="js/plugins/datatable/jquery.dataTables.columnFilter.js"></script>
+    <!-- Chosen -->
+    <script src="js/plugins/chosen/chosen.jquery.min.js"></script>
     <!-- Theme framework -->
     <script src="js/eakroko.min.js"></script>
     <!-- Theme scripts -->
@@ -182,9 +193,15 @@
                         </h3>
                     </div>
                     <div class="box-content nopadding">
-                        <table class="table table-hover table-nomargin table-bordered">
+                        <table class="table table-hover table-nomargin table-bordered  dataTable-columnfilter dataTable">
                             <thead>
                             <tr>
+                                <th>Route</th>
+                                <th>Number</th>
+                                <th class='hidden-350'>Driver</th>
+                                <th></th>
+                            </tr>
+                            <tr class="thefilter">
                                 <th>Route</th>
                                 <th>Number</th>
                                 <th class='hidden-350'>Driver</th>
