@@ -20,6 +20,12 @@ function printLeft(){?>
             <li>
                 <a href="tm-manage-employee.php">Manage Employee</a>
             </li>
+            <li>
+                <a href="tm-manage-driver.php">Manage Driver</a>
+            </li>
+            <li>
+                <a href="tm-manage-conductor.php">Manage Conductor</a>
+            </li>
 
 
 

@@ -23,11 +23,6 @@
     <link rel="stylesheet" href="css/themes.css">
 
 
-
-
-
-
-
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!-- Nice Scroll -->
@@ -119,9 +114,9 @@
                             <span class='lime'></span>
                             <span class="teal"></span>
                             <span class="purple"></span>
-                            <span class="pink"></span>
                             <span class="magenta"></span>
                             <span class="grey"></span>
+                            <span class="pink"></span>
                             <span class="darkblue"></span>
                             <span class="lightred"></span>
                             <span class="lightgrey"></span>
@@ -158,7 +153,7 @@
         <div class="container-fluid">
             <div class="page-header">
                 <div class="pull-left">
-                    <h1>Manage Employee</h1>
+                    <h1>Manage Drivers</h1>
                 </div>
                 <div class="pull-right">
                     <ul class="minitiles" style="display:inline !important;">
@@ -183,14 +178,14 @@
                         <div class="box-title">
                             <h3>
                                 <i class="icon-table"></i>
-                                Employee Details
+                                Driver Details
                             </h3>
                             <div class="pull-right" style="margin-right: 5px;">
                                 <ul class="pull-right stats"><li class="lightred">
-                                        <a href="tm-add-employee.php">
+                                        <a href="tm-assign-driver.php">
                                             <div  style="margin-right: 5px;">
 
-                                                <h3>Add Employee</h3>
+                                                <h3>Assign Driver</h3>
 
                                             </div>
                                         </a>
@@ -201,13 +196,11 @@
                             <table class="table table-hover table-nomargin table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Role</th>
-                                    <th class='hidden-350'>Name</th>
-                                    <th class="hidden-480">License</th>
-                                    <th class='hidden-1024'>Expiry</th>
-                                    <th class="hidden-1024">Status</th>
-                                    <th class="hidden-1024">Verification</th>
+                                    <th>Driver ID</th>
+                                    <th>Druver Name</th>
+                                    <th class='hidden-350'>Vehicle Assigned</th>
+                                    <th></th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -223,19 +216,16 @@
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_employee";
+                                    $sql="select * from tm_employee WHERE (role='driver' or role='dirverconductor') and not vehicle is NULL ";
 
                                     $result=mysqli_query($dbconnection,$sql);
 
                                     while($row=mysqli_fetch_array($result))
                                     {
-                                        echo '<tr><td>'.$row['id'].'</td><td>'.$row['role'].'</td><td class="hidden-350">'
-                                            .$row['name'].'</td><td class="hidden-480">'.$row['license_number'].
-                                            '</td><td class="hidden-1024">'.$row['expiry'].'</td><td class="hidden-1024">'.
-                                            $row['employee_status'].'</td><td class="hidden-1024">'.$row['verification'].'</td>
-                                            <td><button class="edit btn btn-warning" value="'.$row['id']
+                                        echo '<tr><td>'.$row['id'].'</td><td>'.$row['name'].'</td><td class="hidden-350">'
+                                            .$row['vehicle'].'</td><td><button class="edit btn btn-warning" value="'.$row['id']
                                             .'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span>
-                                            <button class="delete btn btn-warning" value="'.$row['id']
+                                            <button class="delete btn btn-warning" value="'.$row['id']."`".$row['vehicle']
                                             .'"><i class="icon-trash"></i>Delete</button></td></tr>';
                                     }
                                 }
@@ -249,11 +239,10 @@
         </div>
     </div>
 </body>
-
 <script>
     $(".edit").click(function () {
         id=this.value;
-        window.location.href="tm-edit-employee.php?id="+id;
+        window.location.href="tm-edit-driver.php?id="+id;
     });
     $(".delete").click(function () {
         id=this.value;
@@ -262,13 +251,12 @@
         {
             var saveButton=$(this);
             saveButton.attr("disabled",true);
-            $.post("tm-delete-employee.php",{
-
+            $.post("tm-delete-driver.php",{
                 id:id
             },function(data,status){
 
 
-                alert(data);
+
                 if (data === 'success')
                     window.location.reload();
                 else alert(data);

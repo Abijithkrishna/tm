@@ -12,7 +12,7 @@ else {
 if (isset($_GET['id'])) {
 
 $id = $_GET['id'];
-$query = "select * from tm_student_details where id='". $id."'  limit 1";
+$query = "select * from tm_passengers where id='". $id."'  limit 1";
 
 if ($result=$dbconnection->query($query)){
 if($result->num_rows==1) {
@@ -213,8 +213,34 @@ $row = $result->fetch_array();
                         <div class="control-group">
                             <label for="routenumber" class="control-label">Route Number</label>
                             <div class="controls">
-                                <input type="text" name="route" id="textfield" placeholder="" class="input-xlarge"
-                                       value="<?php echo $row['route'] ?>">
+
+                                <select name="router" id="select1" class='input-large' value="<?php echo $row['route'] ?>">
+                                    <?
+                                    require_once "praveenlib.php";
+                                    require_once "datas.php";
+
+                                    $dbconnection = connectSQL($dbdetails);
+
+                                    if(mysqli_connect_errno()) //Check if any error occurred on connection
+                                    {
+                                        echo "db_connection_fail";
+                                    }
+                                    else
+                                    {
+                                        $sql="select * from tm_bus_route";
+
+                                        $result1=mysqli_query($dbconnection,$sql);
+
+                                        while($row1=mysqli_fetch_array($result1))
+                                        {
+                                            echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
+
+                                        }
+                                    }
+                                    ?>
+
+
+                                </select>
                             </div>
                         </div>
                         <div class="control-group">

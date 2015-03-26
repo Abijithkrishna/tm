@@ -21,7 +21,7 @@ if(checkPOST($keys)){
         $status=safeString($dbconnection,$_POST['status']);
         $verification=safeString($dbconnection,$_POST['verification']);
 
-        $query= "update employee set role='".$role."',name='".$name."',license_number='".$license.
+        $query= "update tm_employee set role='".$role."',name='".$name."',license_number='".$license.
             "' ,expiry='".$expiry."',employee_status='".$status."',verification='".$verification."' where id=".$id;
         $result=mysqli_query($dbconnection,$query);
         if($result){

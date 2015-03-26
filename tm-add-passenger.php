@@ -184,18 +184,80 @@ printLeft();
 										<div class="controls">
 											<input type="text" name="id" id="textfield" placeholder="" class="input-xlarge">
 										</div>
-									</div>									
-									
+									</div>
+									<div class="control-group">
+										<label for="type" class="control-label">Passenger Id</label>
+										<div class="controls">
+											<select name="type" id="select" class='input-large'>
+											<option	value="student">Student</option>
+												<option value="staff">Staff</option>
+											</select>
+										</div>
+									</div>
 									<div class="control-group">
 										<label for="routenumber" class="control-label">Route Number</label>
 										<div class="controls">
-											<input type="text" name="routenumber" id="textfield" placeholder="" class="input-xlarge">
+
+											<select name="routenumber" id="select1" class='input-large'>
+												<?php
+												require_once "praveenlib.php";
+												require_once "datas.php";
+
+												$dbconnection = connectSQL($dbdetails);
+
+												if(mysqli_connect_errno()) //Check if any error occurred on connection
+												{
+													echo "db_connection_fail";
+												}
+												else
+												{
+													$sql="select * from tm_bus_route";
+
+													$result=mysqli_query($dbconnection,$sql);
+
+													while($row=mysqli_fetch_array($result))
+													{
+														echo '<option value="'.$row['route_number'].'">'.$row['route_number'].'</option>';
+
+													}
+												}
+												?>
+
+
+											</select>
 										</div>
 									</div>
 									<div class="control-group">
 										<label for="stopnumber" class="control-label">Stop Number</label>
 										<div class="controls">
-											<input type="text" name="stopnumber" id="textfield" placeholder="" class="input-xlarge">
+
+											<select name="stopnumber" id="select2" class='input-large'>
+												<?php
+												require_once "praveenlib.php";
+												require_once "datas.php";
+
+												$dbconnection = connectSQL($dbdetails);
+
+												if(mysqli_connect_errno()) //Check if any error occurred on connection
+												{
+													echo "db_connection_fail";
+												}
+												else
+												{
+													$sql="select * from tm_bus_stop";
+
+													$result=mysqli_query($dbconnection,$sql);
+
+													while($row=mysqli_fetch_array($result))
+													{
+														echo '<option value="'.$row['id'].'">'.$row['id']." (".$row['name'].')</option>';
+
+													}
+												}
+												?>
+
+
+											</select>
 										</div>
 									</div>
 									
@@ -221,13 +283,14 @@ printLeft();
 		var id=document.forms['main-form']['id'].value;
 		var route_number=document.forms['main-form']["routenumber"].value;
 		var stop_number=document.forms['main-form']['stopnumber'].value;
-
+		var type =document.forms['main-form']['type'].value;
 
 
 
 		$('button').attr('disabled',true);
 		$.post("add_passenger.php",{
 			id:id,
+			type:type,
 			route:route_number,
 			stop:stop_number
 		},function(data,status){
@@ -239,6 +302,12 @@ printLeft();
 			}
 		})
 	}
+</script>
+<script src="js/jquery-ui.min.js"></script>
+
+<script>
+	$('#select1').combobox();
+	$('#select2').combobox();
 </script>
 </html>
 

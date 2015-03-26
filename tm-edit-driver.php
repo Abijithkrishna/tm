@@ -23,11 +23,6 @@
     <link rel="stylesheet" href="css/themes.css">
 
 
-
-
-
-
-
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!-- Nice Scroll -->
@@ -62,6 +57,39 @@
 </head>
 
 <body>
+<?php
+
+
+if(isset($_POST['number'])&&isset($_POST['driver'])){
+    require_once "praveenlib.php";
+    require_once "datas.php";
+
+    $dbconnection = connectSQL($dbdetails);
+
+    if(mysqli_connect_errno()) //Check if any error occurred on connection
+    {
+        echo "db_connection_fail";
+    }
+    else
+    {
+        $sql="update tm_employee set vehicle='".$_POST['number']."' WHERE id=".$_POST['driver'].";"
+            ."update tm_vehicle_details set driver=NULL where driver=".$_POST['driver'].";"
+            ."update tm_vehicle_details set driver=".$_POST['driver']." where number='".$_POST['number']."';";
+
+        $result=mysqli_multi_query($dbconnection,$sql);
+
+        if($result){
+            header("location:tm-manage-driver.php");
+            ?>
+            <script>
+                alert("Driver Assigned");
+            </script>
+        <?php
+        }else echo $dbconnection->error;
+    }
+
+}
+?>
 <div id="navigation">
     <div class="container-fluid">
         <a href="#" id="brand"></a>
@@ -158,7 +186,7 @@
         <div class="container-fluid">
             <div class="page-header">
                 <div class="pull-left">
-                    <h1>Manage Employee</h1>
+                    <h1>Assign Employee</h1>
                 </div>
                 <div class="pull-right">
                     <ul class="minitiles" style="display:inline !important;">
@@ -176,41 +204,28 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="icon-th-list"></i> Assign Driver</h3>
+                </div>
+                <div class="box-content nopadding">
+                    <form name="main-form"  action="<?php $_SERVER['PHP_SELF']?>" method="POST" class='form-horizontal form-bordered'>
+                    <div class="control-group">
+                        <label for="driver" class="control-label">Driver ID</label>
+                        <div class="controls">
 
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="box box-color box-bordered">
-                        <div class="box-title">
-                            <h3>
-                                <i class="icon-table"></i>
-                                Employee Details
-                            </h3>
-                            <div class="pull-right" style="margin-right: 5px;">
-                                <ul class="pull-right stats"><li class="lightred">
-                                        <a href="tm-add-employee.php">
-                                            <div  style="margin-right: 5px;">
+                            <input type="text"  name="driver"  class='input-large' value="<?php echo $_GET['id'];    ?>" readonly >
 
-                                                <h3>Add Employee</h3>
-
-                                            </div>
-                                        </a>
-                                    </li></ul>
-                            </div>
                         </div>
-                        <div class="box-content nopadding">
-                            <table class="table table-hover table-nomargin table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Role</th>
-                                    <th class='hidden-350'>Name</th>
-                                    <th class="hidden-480">License</th>
-                                    <th class='hidden-1024'>Expiry</th>
-                                    <th class="hidden-1024">Status</th>
-                                    <th class="hidden-1024">Verification</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                    </div>
+                    <div class="control-group">
+                        <label for="number" class="control-label">Vehicle Number</label>
+
+                        <div class="controls">
+
+                            <select name="number" id="select1" class='input-large'>
                                 <?php
                                 require_once "praveenlib.php";
                                 require_once "datas.php";
@@ -223,62 +238,57 @@
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_employee";
+                                    $sql="select * from tm_vehicle_details where driver is NULL";
 
                                     $result=mysqli_query($dbconnection,$sql);
 
                                     while($row=mysqli_fetch_array($result))
                                     {
-                                        echo '<tr><td>'.$row['id'].'</td><td>'.$row['role'].'</td><td class="hidden-350">'
-                                            .$row['name'].'</td><td class="hidden-480">'.$row['license_number'].
-                                            '</td><td class="hidden-1024">'.$row['expiry'].'</td><td class="hidden-1024">'.
-                                            $row['employee_status'].'</td><td class="hidden-1024">'.$row['verification'].'</td>
-                                            <td><button class="edit btn btn-warning" value="'.$row['id']
-                                            .'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span>
-                                            <button class="delete btn btn-warning" value="'.$row['id']
-                                            .'"><i class="icon-trash"></i>Delete</button></td></tr>';
+                                        echo '<option value="'.$row['number'].'">'.$row['number'].'</option>';
+
                                     }
                                 }
                                 ?>
-                                </tbody>
-                            </table>
+
+
+                            </select>
                         </div>
                     </div>
+
+
+
+
+                    <!--
+                    <div class="control-group">
+                        <label for="" class="control-label"></label>
+                        <div class="controls">
+                            <input type="text" name="" id="textfield" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a href="tm-driver-details.html">
+                            <button type="button" class="btn" >Cancel</button>
+                        </a>
+
+                    </div>
+
+                    </form>
+
                 </div>
             </div>
         </div>
+
     </div>
+</div>
+
 </body>
+<script src="js/jquery-ui.min.js"></script>
 
 <script>
-    $(".edit").click(function () {
-        id=this.value;
-        window.location.href="tm-edit-employee.php?id="+id;
-    });
-    $(".delete").click(function () {
-        id=this.value;
-        var ans=confirm("Are you sure to delete route "+id);
-        if(ans)
-        {
-            var saveButton=$(this);
-            saveButton.attr("disabled",true);
-            $.post("tm-delete-employee.php",{
+    $('#select1').combobox();
 
-                id:id
-            },function(data,status){
-
-
-                alert(data);
-                if (data === 'success')
-                    window.location.reload();
-                else alert(data);
-                saveButton.attr('disabled',false);
-
-            });
-
-
-        }
-    });
 </script>
 </html>
 

@@ -2,7 +2,7 @@
 require_once "praveenlib.php";
 require_once "datas.php";
 
-$keys=array('id','route','stop');
+$keys=array('id','type','route','stop');
 if(checkPOST($keys)){
     $dbconnection = connectSQL($dbdetails);
 
@@ -16,10 +16,11 @@ if(checkPOST($keys)){
         $id=safeString($dbconnection,$_POST['id']);
         $route=safeString($dbconnection,$_POST['route']);
         $stop=safeString($dbconnection,$_POST['stop']);
+        $type=safeString($dbconnection,$_POST['type']);
 
 
-        $query= "insert into tm_student_details (id,route,stop)values("
-            .$id.",".$route.",".$stop.")";
+        $query= "insert into tm_passengers (id,type,route,stop)values("
+            .$id.",'".$type."',".$route.",".$stop.")";
         $result=mysqli_query($dbconnection,$query);
         if($result){
             echo "success";

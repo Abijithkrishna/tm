@@ -197,6 +197,7 @@ printLeft();
 									<thead>
 										<tr>
 											<th>ID</th>
+											<th>Type</th>
 											<th>Route</th>
 											<th class='hidden-350'>Stop</th>
 											<th></th>
@@ -216,13 +217,13 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from tm_student_details";
+								        	$sql="select * from tm_passengers";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 
 								        	while($row=mysqli_fetch_array($result))
 											{
-												echo '<tr><td>'.$row['id'].'</td><td>'.$row['route'].'</td><td class="hidden-350">'
+												echo '<tr><td>'.$row['id'].'</td><td>'.$row['type'].'</td><td>'.$row['route'].'</td><td class="hidden-350">'
 													.$row['stop'].'</td><td><button class="edit btn btn-warning" value="'.$row['id']
 													.'"><i class="icon-edit"></i>Edit</button><span>&nbsp&nbsp</span>
                                             <button class="delete btn btn-warning" value="'.$row['id']

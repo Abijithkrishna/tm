@@ -18,7 +18,7 @@ if(checkPOST($keys)){
         $end=safeString($dbconnection,$_POST['end']);
         $time=safeString($dbconnection,$_POST['time']);
 
-        $query= "update tm_bus_route set start_location='".$start."', end_location='".$end."', start_time='".$time."' where route_number=".$number;
+        $query= "update tm_bus_route set start_location=".$start.", end_location=".$end.", start_time='".$time."' where route_number=".$number;
 
         $result=mysqli_query($dbconnection,$query);
         if($result){

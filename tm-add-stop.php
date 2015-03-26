@@ -195,7 +195,34 @@ printLeft();
 									<div class="control-group">
 										<label for="route-number" class="control-label">Route Number</label>
 										<div class="controls">
-											<input type="text" name="route-number" id="textfield" placeholder="" class="input-xlarge">
+
+											<select name="route-number" id="select1" class='input-large'>
+												<?php
+												require_once "praveenlib.php";
+												require_once "datas.php";
+
+												$dbconnection = connectSQL($dbdetails);
+
+												if(mysqli_connect_errno()) //Check if any error occurred on connection
+												{
+													echo "db_connection_fail";
+												}
+												else
+												{
+													$sql="select * from tm_bus_route";
+
+													$result=mysqli_query($dbconnection,$sql);
+
+													while($row=mysqli_fetch_array($result))
+													{
+														echo '<option value="'.$row['route_number'].'">'.$row['route_number'].'</option>';
+
+													}
+												}
+												?>
+
+
+											</select>
 										</div>
 									</div>
 									
@@ -208,8 +235,9 @@ printLeft();
 									</div>
 									<div class="control-group">
 										<label for="eta" class="control-label">Estimated Time From Start</label>
-										<div class="controls">
-											<input type="text" name="eta" id="textfield" placeholder="" class="input-xlarge">
+										<div class="bootstrap-timepicker input-append controls" style="display:block;">
+											<input name="eta" id="timepicker1" placeholder="" class="input-xlarge" type="text">
+											<span class="add-on"><i class="icon-time"></i></span>
 										</div>
 									</div>
 									</div>
@@ -254,6 +282,12 @@ printLeft();
 	</div>
 
 </body>
+<script src="js/jquery-ui.min.js"></script>
+
+<script>
+	$('#select1').combobox();
+
+</script>
 <script>
 function send(){
 	var name=document.forms['main-form']['stop-name'].value;
