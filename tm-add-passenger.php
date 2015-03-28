@@ -198,7 +198,7 @@ printLeft();
 										<label for="routenumber" class="control-label">Route Number</label>
 										<div class="controls">
 
-											<select name="routenumber" id="select1" class='input-large'>
+											<select onchange="updateStop();" name="routenumber" id="select1" class='input-large'>
 												<?php
 												require_once "praveenlib.php";
 												require_once "datas.php";
@@ -217,6 +217,7 @@ printLeft();
 
 													while($row=mysqli_fetch_array($result))
 													{
+														if(!$firstroute)$firstroute=$row['route_number'];
 														echo '<option value="'.$row['route_number'].'">'.$row['route_number'].'</option>';
 
 													}
@@ -224,43 +225,44 @@ printLeft();
 												?>
 
 
-											</select>
+											</select><div id="loading" hidden="true">Loading stops..</div>
 										</div>
 									</div>
-									<div class="control-group">
-										<label for="stopnumber" class="control-label">Stop Number</label>
-										<div class="controls">
+									<div id="stopsblock">
+										<div class="control-group">
+											<label for="stopnumber" class="control-label">Stop Number</label>
+											<div class="controls">
 
-											<select name="stopnumber" id="select2" class='input-large'>
-												<?php
-												require_once "praveenlib.php";
-												require_once "datas.php";
+												<select name="stopnumber" id="select2" class='input-large'>
+													<?php
+													require_once "praveenlib.php";
+													require_once "datas.php";
 
-												$dbconnection = connectSQL($dbdetails);
+													$dbconnection = connectSQL($dbdetails);
 
-												if(mysqli_connect_errno()) //Check if any error occurred on connection
-												{
-													echo "db_connection_fail";
-												}
-												else
-												{
-													$sql="select * from tm_bus_stop";
-
-													$result=mysqli_query($dbconnection,$sql);
-
-													while($row=mysqli_fetch_array($result))
+													if(mysqli_connect_errno()) //Check if any error occurred on connection
 													{
-														echo '<option value="'.$row['id'].'">'.$row['id']." (".$row['name'].')</option>';
-
+														echo "db_connection_fail";
 													}
-												}
-												?>
+													else
+													{
+														$sql="select * from tm_bus_stop where route=".$firstroute;
+
+														$result=mysqli_query($dbconnection,$sql);
+
+														while($row=mysqli_fetch_array($result))
+														{
+															echo '<option value="'.$row['id'].'">'.$row['id']." (".$row['name'].')</option>';
+
+														}
+													}
+													?>
 
 
-											</select>
+												</select>
+											</div>
 										</div>
 									</div>
-									
 
 									<div class="form-actions">
 										<button onclick="send();" type="button" class="btn btn-primary">Save</button>
@@ -300,8 +302,25 @@ printLeft();
 				if(data==='success')document.forms['main-form'].reset();
 
 			}
-		})
+		});
 	}
+
+
+
+	function updateStop(){
+		var route=document.forms['main-form']["routenumber"].value;
+
+		$('#loding').show();
+		$.post("tm-get-stops.php",{
+			route:route
+		},function(data,status){
+			$('#loding').hide();
+
+			document.getElementById("stopsblock").innerHTML=data;
+
+		});
+	}
+
 </script>
 <script src="js/jquery-ui.min.js"></script>
 
