@@ -259,17 +259,13 @@ printLeft();
 			var saveButton=$(this);
 			saveButton.attr("disabled",true);
 			$.post("tm-delete-vehicle.php",{
-
 				number:number
 			},function(data,status){
-
-
 				alert(data);
 				if (data === 'success')
 					window.location.reload();
 				else alert(data);
 				saveButton.attr('disabled',false);
-
 			});
 
 

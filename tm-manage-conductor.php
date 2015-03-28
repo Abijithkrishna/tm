@@ -196,8 +196,8 @@
                             <table class="table table-hover table-nomargin table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Driver ID</th>
-                                    <th>Druver Name</th>
+                                    <th>Conductor ID</th>
+                                    <th>Conductor Name</th>
                                     <th class='hidden-350'>Vehicle Assigned</th>
                                     <th></th>
 

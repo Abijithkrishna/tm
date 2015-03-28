@@ -197,7 +197,7 @@
                                 <thead>
                                 <tr>
                                     <th>Driver ID</th>
-                                    <th>Druver Name</th>
+                                    <th>Driver Name</th>
                                     <th class='hidden-350'>Vehicle Assigned</th>
                                     <th></th>
 

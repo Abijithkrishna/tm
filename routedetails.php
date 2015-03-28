@@ -184,6 +184,12 @@
             </div>
         </div>
         <div class="row-fluid">
+            <div class="span6">
+
+            </div>
+
+        </div>
+        <div class="row-fluid">
             <div class="span12">
                 <div class="box box-color box-bordered">
                     <div class="box-title">
@@ -191,6 +197,10 @@
                             <i class="icon-table"></i>
                             Routes
                         </h3>
+                        <div class="pull-right" style="margin-right: 5px;">
+                                <button class="btn btn-success stops" type="button">Stops</button>
+                                <button class="btn btn-success passengers" type="button">Passengers</button>
+                        </div>
                     </div>
                     <div class="box-content nopadding">
                         <table class="table table-hover table-nomargin table-bordered  dataTable-columnfilter dataTable">
@@ -205,7 +215,7 @@
                                 <th>Route</th>
                                 <th>Number</th>
                                 <th class='hidden-350'>Driver</th>
-                                <th></th>
+                                <th class='hidden-480'>Conductor</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -227,9 +237,14 @@
 
                                 while($row=mysqli_fetch_array($result))
                                 {
+                                    $driver = "select name from tm_employee where id='".$row['driver']."' limit 1";
+                                    $conductor = "select name from tm_employee where id='".$row['conductor']."' limit 1";
+                                    $driv = $dbconnection->query($driver);
+                                    $row1 = $driv->fetch_array();
+                                    $cond = $dbconnection->query($conductor);
+                                    $row2 = $cond->fetch_array();
                                     echo '<tr><td>'.$row['route'].'</td><td>'.$row['number'].'</td><td class="hidden-350">'
-                                    .$row['driver'].'</td><td><button class="list btn btn-warning" value="'.$row['route'].'">List Stops</button>
-                                    </td></tr>';
+                                    .$row1['name'].' ('.$row['driver'].')</td><td>'.$row2['name'].' ('.$row['conductor'].')</td></tr>';
                                 }
                             }
                             ?>
@@ -243,11 +258,23 @@
     </div>
 </div>
 <script>
-$(".list").click(function(){
-    id=this.value;
-    window.location.href="liststops.php?id="+id;
+$(".stops").click(function(){
+    window.location.href="liststops.php";
+});
+$(".passengers").click(function(){
+    window.location.href="stopdetails.php";
 });
 </script>
 </body>
 </html>
 
+
+<!-- <ul class="pull-right stats"><li class="lightred">
+                                    <a href="tm-add-vehicle.php">
+                                        <div  style="margin-right: 5px;">
+
+                                            <h3>Add Vehicle</h3>
+
+                                        </div>
+                                    </a>
+                                </li></ul>

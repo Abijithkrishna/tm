@@ -225,8 +225,9 @@
 
                                 while($row=mysqli_fetch_array($result))
                                 {
-                                    $sql1="select * from tm_student_details where route=".$row['route']."";
-                                    $capa=mysqli_num_rows(mysqli_query($dbconnection,$sql1));
+                                    $sql1="select * from tm_passengers where route=".$row['route']."";
+                                    $res = $dbconnection->query($sql1);
+                                    $capa = $res->num_rows;
                                     echo '<tr><td>'.$row['number'].'</td><td>'.$capa.'</td><td class="hidden-350">'
                                         .$row['capacity'].'</td></tr>';
                                 }
