@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2015 at 10:58 AM
+-- Generation Time: Apr 04, 2015 at 12:38 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -380,10 +380,18 @@ CREATE TABLE IF NOT EXISTS `tm_vehicle_details` (
   `capacity` int(11) DEFAULT NULL,
   `vehicle_condition` text,
   `vehicle_status` text,
-  `route` int(11) DEFAULT NULL,
+  `route` int(11) DEFAULT '0',
   `driver` int(11) DEFAULT NULL,
   `conductor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tm_vehicle_details`
+--
+
+INSERT INTO `tm_vehicle_details` (`institute_id`, `number`, `type`, `capacity`, `vehicle_condition`, `vehicle_status`, `route`, `driver`, `conductor`) VALUES
+(33, 'TNopapap', '1', 60, 'good', 'ok', 0, NULL, NULL),
+(44, '9999999999', '1', 97, '', '', 0, NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

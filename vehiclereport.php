@@ -224,13 +224,13 @@ if(isset($institutionId)) {
                             }
                             else
                             {
-                                $sql="select * from tm_vehicle_details";
+                                $sql="select * from tm_vehicle_details WHERE institute_id={$institutionId}";
 
                                 $result=mysqli_query($dbconnection,$sql);
 
                                 while($row=mysqli_fetch_array($result))
                                 {
-                                    $sql1="select * from tm_passengers where route=".$row['route']." && institute_id={$institutionId}";
+                                    $sql1="select * from tm_passengers where route=".$row['route']." and institute_id={$institutionId}";
                                     $res = $dbconnection->query($sql1);
                                     $capa = $res->num_rows;
                                     echo '<tr><td>'.$row['number'].'</td><td>'.$capa.'</td><td class="hidden-350">'
