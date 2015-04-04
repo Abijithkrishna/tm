@@ -12,7 +12,7 @@ else {
 if (isset($_GET['id'])) {
 
 $id = $_GET['id'];
-$query = "select * from tm_passengers where id='". $id."'  limit 1";
+$query = "select * from tm_passengers where institue_id={$institutionId} && id='". $id."'  limit 1";
 
 if ($result=$dbconnection->query($query)){
 if($result->num_rows==1) {
@@ -227,7 +227,7 @@ $row = $result->fetch_array();
                                     }
                                     else
                                     {
-                                        $sql="select * from tm_bus_route";
+                                        $sql="select * from tm_bus_route institue_id={$institutionId}";
 
                                         $result1=mysqli_query($dbconnection,$sql);
 

@@ -22,7 +22,7 @@ if(checkPOST($keys)){
         $verification=safeString($dbconnection,$_POST['verification']);
 
         $query= "update tm_employee set role='".$role."',name='".$name."',license_number='".$license.
-            "' ,expiry='".$expiry."',employee_status='".$status."',verification='".$verification."' where id=".$id;
+            "' ,expiry='".$expiry."',employee_status='".$status."',verification='".$verification."' where institue_id={$institutionId} && id=".$id;
         $result=mysqli_query($dbconnection,$query);
         if($result){
             header("location:tm-manage-employee.php");

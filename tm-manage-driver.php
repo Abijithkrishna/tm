@@ -221,7 +221,7 @@ if(isset($institutionId)) {
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_employee WHERE (role='driver' or role='dirverconductor') and not vehicle is NULL ";
+                                    $sql="select * from tm_employee WHERE (role='driver' or role='dirverconductor') and not vehicle is NULL && institute_id={$institutionId}";
 
                                     $result=mysqli_query($dbconnection,$sql);
 

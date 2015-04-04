@@ -225,7 +225,7 @@ if(isset($institutionId)) {
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_bus_stop";
+                                    $sql="select * from tm_bus_stop WHERE institute_id={$institutionId}";
 
                                     $result=mysqli_query($dbconnection,$sql);
 

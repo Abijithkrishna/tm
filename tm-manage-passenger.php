@@ -222,7 +222,7 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from tm_passengers";
+								        	$sql="select * from tm_passengers WHERE  institute_id={$institutionId}";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 

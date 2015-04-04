@@ -72,9 +72,9 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
     }
     else
     {
-        $sql="update tm_employee set vehicle='".$_POST['number']."' WHERE id=".$_POST['driver'].";"
-            ."update tm_vehicle_details set conductor=NULL where conductor=".$_POST['driver'].";"
-            ."update tm_vehicle_details set conductor=".$_POST['driver']." where number='".$_POST['number']."';";
+        $sql="update tm_employee set vehicle='".$_POST['number']."' WHERE institue_id={$institutionId} && id=".$_POST['driver'].";"
+            ."update tm_vehicle_details set conductor=NULL where institue_id={$institutionId} && conductor=".$_POST['driver'].";"
+            ."update tm_vehicle_details set conductor=".$_POST['driver']." where institue_id={$institutionId} && number='".$_POST['number']."';";
 
 
         $result=mysqli_multi_query($dbconnection,$sql);
@@ -235,7 +235,7 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
                                     }
                                     else
                                     {
-                                        $sql="select * from tm_vehicle_details where conductor is NULL";
+                                        $sql="select * from tm_vehicle_details where institue_id={$institutionId} && conductor is NULL";
 
                                         $result=mysqli_query($dbconnection,$sql);
 

@@ -230,7 +230,7 @@ if(isset($institutionId)) {
 
                                 while($row=mysqli_fetch_array($result))
                                 {
-                                    $sql1="select * from tm_passengers where route=".$row['route']."";
+                                    $sql1="select * from tm_passengers where route=".$row['route']." && institute_id={$institutionId}";
                                     $res = $dbconnection->query($sql1);
                                     $capa = $res->num_rows;
                                     echo '<tr><td>'.$row['number'].'</td><td>'.$capa.'</td><td class="hidden-350">'

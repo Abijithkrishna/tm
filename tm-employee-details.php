@@ -212,7 +212,7 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from employee";
+								        	$sql="select * from employee WHERE institue_id={$institutionId}";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 

@@ -15,7 +15,7 @@
             }
             else
             {
-                $sql="select * from tm_bus_stop where route=".$_POST['route'];
+                $sql="select * from tm_bus_stop where route=".$_POST['route']." and institute_id=".$institutionId;
 
                 $result=mysqli_query($dbconnection,$sql);
 

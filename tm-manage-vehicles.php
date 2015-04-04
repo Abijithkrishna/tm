@@ -226,7 +226,7 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from tm_vehicle_details";
+								        	$sql="select * from tm_vehicle_details WHERE institute_id={$institutionId}";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 

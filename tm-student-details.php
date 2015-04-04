@@ -210,7 +210,7 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from tm_student_details";
+								        	$sql="select * from tm_student_details ";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 

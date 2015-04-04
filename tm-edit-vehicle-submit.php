@@ -19,7 +19,7 @@ if(checkPOST($keys)){
         $condition=safeString($dbconnection,$_POST['condition']);
         $status=safeString($dbconnection,$_POST['status']);
         $query= "update tm_vehicle_details set type=".$type.",capacity=".$capcity.",vehicle_condition='"
-            .$condition."',vehicle_status='".$status."' where number='".$number."'";
+            .$condition."',vehicle_status='".$status."' where institue_id={$institutionId} && number='".$number."'";
 
         if($dbconnection->query($query)){
             header("location:tm-manage-vehicles.php");
