@@ -18,8 +18,8 @@ if(checkPOST($keys)){
         $end=safeString($dbconnection,$_POST['end']);
         $time=safeString($dbconnection,$_POST['time']);
 
-        $query= "insert into tm_bus_route(route_number,start_location,end_location,start_time)values("
-        .$number.",".$start.",".$end.",'".$time."')";
+        $query= "insert into tm_bus_route(route_number,start_location,end_location,start_time,institute_id)values("
+        .$number.",".$start.",".$end.",'".$time."',{$institutionId})";
         $result=mysqli_query($dbconnection,$query);
         if($result){
             echo "success";

@@ -21,11 +21,11 @@ if(isset($institutionId)) {
             $status = safeString($dbconnection, $_POST['status']);
             $verification = safeString($dbconnection, $_POST['verification']);
 
-            $query = "insert into tm_employee(id,role,name,license_number ,expiry,employee_status,verification)values("
-                . $id . ",'" . $role . "','" . $name . "','" . $license . "','" . $expiry . "','" . $status . "','" . $verification . "')";
+            $query = "insert into tm_employee(id,role,name,license_number ,expiry,employee_status,verification,institute_id)values("
+                . $id . ",'" . $role . "','" . $name . "','" . $license . "','" . $expiry . "','" . $status . "','" . $verification . "',".$institutionId.")";
             $result = mysqli_query($dbconnection, $query);
             if ($result) {
-                echo "success";
+                echo "success".$institutionId;
             } else {
                 echo "bd_error_1 " . mysqli_error($dbconnection);
             }

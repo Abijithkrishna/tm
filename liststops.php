@@ -206,7 +206,7 @@ if(isset($institutionId)) {
                             }
                             else
                             {
-                                $query = "select route_number from tm_bus_route";
+                                $query = "select route_number from tm_bus_route where institute_id={$institutionId}";
                                 if($result = $dbconnection->query($query)){
                                     if($result){
                                         echo '<select name="routenum" id="routenum" class="input-large" onchange="selectpost()" >';

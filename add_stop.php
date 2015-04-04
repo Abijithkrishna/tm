@@ -18,8 +18,8 @@ require_once "datas.php";
             $distance=safeString($dbconnection,$_POST['distance']);
             $eta=safeString($dbconnection,$_POST['eta']);
 
-            $query= "insert into tm_bus_stop(name,id,route,distance,estimated_time) values('"
-                .$name."',".$number.",".$routenumber.",'".$distance."','".$eta."')";
+            $query= "insert into tm_bus_stop(name,id,route,distance,estimated_time,institute_id) values('"
+                .$name."',".$number.",".$routenumber.",'".$distance."','".$eta."',{$institutionId})";
             $result=mysqli_query($dbconnection,$query);
             if($result){
                 echo "success";

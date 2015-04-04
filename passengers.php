@@ -4,7 +4,8 @@ require_once "datas.php";
 if(isset($_POST['route'])){
     $db=connectSQL($dbdetails);
     $route = $_POST['route'];
-    $query = "select name,id from tm_bus_stop where route={$route}";
+    $query = "select name,id from tm_bus_stop where route={$route} and institute_id={$institutionId}
+";
     if($result = $db->query($query)){
         $str="";
         while($row = $result->fetch_array()){

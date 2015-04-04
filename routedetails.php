@@ -236,14 +236,14 @@ if(isset($institutionId)) {
                             }
                             else
                             {
-                                $sql="select * from tm_vehicle_details";
+                                $sql="select * from tm_vehicle_details where institute_id={$institutionId}";
 
                                 $result=mysqli_query($dbconnection,$sql);
 
                                 while($row=mysqli_fetch_array($result))
                                 {
-                                    $driver = "select name from tm_employee where id='".$row['driver']."' limit 1";
-                                    $conductor = "select name from tm_employee where id='".$row['conductor']."' limit 1";
+                                    $driver = "select name from tm_employee where id='".$row['driver']."' and institute_id={$institutionId} limit 1";
+                                    $conductor = "select name from tm_employee where id='".$row['conductor']."' and institute_id={$institutionId} limit 1";
                                     $driv = $dbconnection->query($driver);
                                     $row1 = $driv->fetch_array();
                                     $cond = $dbconnection->query($conductor);

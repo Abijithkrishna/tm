@@ -18,8 +18,8 @@ if(checkPOST($keys)){
         $capcity=safeString($dbconnection,$_POST['capacity']);
         $condition=safeString($dbconnection,$_POST['condition']);
         $status=safeString($dbconnection,$_POST['status']);
-        $query= "insert into tm_vehicle_details(number,type,capacity,vehicle_condition,vehicle_status)values('"
-            .$number."',".$type.",".$capcity.",'".$condition."','".$status."')";
+        $query= "insert into tm_vehicle_details(number,type,capacity,vehicle_condition,vehicle_status,institute_id)values('"
+            .$number."',".$type.",".$capcity.",'".$condition."','".$status."',{$institutionId})";
         $result=mysqli_query($dbconnection,$query);
         if($result){
             echo "success";

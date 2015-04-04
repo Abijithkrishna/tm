@@ -16,7 +16,7 @@ if(checkPOST($keys)){
         $number=safeString($dbconnection,$_POST['number']);
         $driver=safeString($dbconnection,$_POST['driver']);
 
-        $query= "update tm_vehicle_details set driver=".$driver." where number='".$number."'";
+        $query= "update tm_vehicle_details set driver=".$driver." where number='".$number."' AND institue_id={$institutionId}";
 
         $result=mysqli_query($dbconnection,$query);
         if($result){

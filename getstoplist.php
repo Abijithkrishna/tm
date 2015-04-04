@@ -15,7 +15,8 @@ if(checkPOST($keys)){
 
         $route=safeString($dbconnection,$_POST['route']);
 
-        $query= "select * from tm_bus_stop where route_number=".$route;
+        $query= "select * from tm_bus_stop where route_number=".$route." and institute_id={$institutionId}
+";
         $result= mysqli_query($dbconnection,$query);
 
         if($result)
