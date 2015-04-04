@@ -1,3 +1,8 @@
+<?php
+require_once "praveenlib.php";
+require_once "datas.php";
+if(isset($institutionId)) {
+?>
 <!doctype html>
 <html>
 <head>
@@ -272,38 +277,8 @@
     };
 </script>
 </html>
-<!--
-
-if($id !="")
-{
-    $query = "select * from tm_bus_stop where route='". $id ."'";
-
-
-    if ($result = $dbconnection->query($query)) {
-        if ($result) {
-
-
-            while($row = $result->fetch_array())
-            {
-                echo "<tr><td>".$row['id']."</td><td>".$row['name']."</td><td>";
-                $sql="select * from tm_student_details where route='".$id."&& stop='".$row['id']."'";
-
-                echo "hi";                                                    if ($result1 = $dbconnection->query($sql)) {
-
-
-
-                while($row1 = $result1->fetch_array())
-                {
-
-                    echo $row1['id']."<br>";
-                }
-
-            }
-                echo "</td><td></td>";
-            }
-        }
-    }
+<?php
+}else{
+    header('location:'.$loginurl);
 }
-
-
-
+?>
