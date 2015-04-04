@@ -13,5 +13,5 @@ session_start();
 $sessionkey='admin_id';
 if(isset($_SESSION[$sessionkey]))$institutionId=$_SESSION[$sessionkey];
 
-
+$loginurl="login.php";
 ?>
