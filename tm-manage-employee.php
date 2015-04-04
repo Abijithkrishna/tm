@@ -1,3 +1,8 @@
+<?php
+require_once "praveenlib.php";
+require_once "datas.php";
+if(isset($institutionId)) {
+?>
 <!doctype html>
 <html>
 <head>
@@ -282,3 +287,8 @@
 </script>
 </html>
 
+<?php
+}else{
+    header('location:'.$loginurl);
+}
+?>
