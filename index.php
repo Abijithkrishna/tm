@@ -201,3 +201,4 @@ if(isset($institutionId)) {
 }else{
 	header('location:'.$loginurl);
 }
+?>
