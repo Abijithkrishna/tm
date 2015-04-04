@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+require_once "praveenlib.php";
+require_once "datas.php";
+if(isset($institutionId)) {
+    ?>
+    <!doctype html>
 <html>
 <head>
     <title>Edufee</title>
@@ -268,13 +273,8 @@ $(".passengers").click(function(){
 </body>
 </html>
 
-
-<!-- <ul class="pull-right stats"><li class="lightred">
-                                    <a href="tm-add-vehicle.php">
-                                        <div  style="margin-right: 5px;">
-
-                                            <h3>Add Vehicle</h3>
-
-                                        </div>
-                                    </a>
-                                </li></ul>
+<?php
+}else{
+    header('location:'.$loginurl);
+}
+?>
