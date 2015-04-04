@@ -9,5 +9,9 @@ $dbdetails=array(
     'username'=>$dbusername,
     'password'=>$dbpassword
 );
+session_start();
+$sessionkey='admin_id';
+if(isset($_SESSION[$sessionkey]))$institutionId=$_SESSION[$sessionkey];
+
 
 ?>
