@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+require_once "praveenlib.php";
+require_once "datas.php";
+if(isset($institutionId)) {
+    ?>
+    <!doctype html>
 <html>
 <head>
     <title>Edufee</title>
@@ -308,3 +313,8 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
 </script>
 </html>
 
+<?php
+}else{
+    header('location:'.$loginurl);
+}
+?>
