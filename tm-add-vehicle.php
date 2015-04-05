@@ -119,23 +119,25 @@ printLeft();
 		var capacity=document.forms['main-form']['capacity'].value;
 		var condition=document.forms['main-form']['condition'].value;
 		var status=document.forms['main-form']['status'].value;
+		if(number!==''&&capacity!==''&&!isNaN(capacity)) {
 
+			$('button').attr('disabled', true);
+			$.post("add_vehicle.php", {
 
-		$('button').attr('disabled',true);
-		$.post("add_vehicle.php",{
-
-			number:number,
-			type:type,
-			capacity:capacity,
-			condition:condition,
-			status:status
-		},function(data,status){
-			$('button').attr('disabled',false);
-			if(status==="success"){
-				alert(data);
-				if(data==="success")document.forms['main-form'].reset();
-			}
-		})
+				number: number,
+				type: type,
+				capacity: capacity,
+				condition: condition,
+				status: status
+			}, function (data, status) {
+				$('button').attr('disabled', false);
+				if (status === "success") {
+					alert(data);
+					if (data === "success")document.forms['main-form'].reset();
+				}
+			});
+		}else {
+			alert('Fill details Properly');}
 	}
 </script>
 </html>

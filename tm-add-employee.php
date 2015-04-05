@@ -139,7 +139,7 @@ printLeft();
 
         var id=document.forms['main-form']['id'].value;
         document.forms['main-form'].reset();
-        if(id!=='') {
+        if(id!==''&&!isNaN(id)) {
             $('#not-found').hide();
 
 
@@ -147,21 +147,27 @@ printLeft();
                 function (data, status) {
 
                     if (data === 'error') {
+                        document.forms['main-form']['id'].value = id;
                         alert('Server_error');
                     } else if (data === 'not_found') {
+                        document.forms['main-form']['id'].value = id;
                         $('#not-found').show();
+
 
                     } else {
                         var datas = data.split('`');
-                        var name = datas[0];
-                        var licenceNo = datas[1];
-                        var licenceExpiry = datas[2];
-                        var employeeStatus = datas[3];
-                        document.forms['main-form']['id'].value = id;
-                        document.forms['main-form']["name"].value = name;
-                        document.forms['main-form']['license-number'].value = licenceNo;
-                        document.forms['main-form']['expiry'].value = licenceExpiry;
-                        document.forms['main-form']['status'].value = employeeStatus;
+
+                        var name = datas[1];
+                        var licenceNo = datas[2];
+                        var licenceExpiry = datas[3];
+                        var employeeStatus = datas[4];
+                        if(datas[0]==='success') {
+                            document.forms['main-form']['id'].value = id;
+                            document.forms['main-form']["name"].value = name;
+                            document.forms['main-form']['license-number'].value = licenceNo;
+                            document.forms['main-form']['expiry'].value = licenceExpiry;
+                            document.forms['main-form']['status'].value = employeeStatus;
+                        }
                     }
                 });
         }
