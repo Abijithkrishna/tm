@@ -36,7 +36,7 @@ printLeft();
                         <div class="control-group">
                             <label for="id" class="control-label">Employee Id</label>
                             <div class="controls">
-                                <input type="text" name="id" id="textfield" placeholder="" class="input-xlarge">
+                                <input type="text" name="id" id="textfield" placeholder="" class="input-xlarge" onchange="loadDetails();"><span id="not-found" style="color:red" hidden="true">Not Found</span>
                             </div>
                         </div>
                         <div class="control-group">
@@ -132,6 +132,39 @@ printLeft();
 
             }
         })
+    }
+    function loadDetails(){
+
+
+
+        var id=document.forms['main-form']['id'].value;
+        document.forms['main-form'].reset();
+        if(id!=='') {
+            $('#not-found').hide();
+
+
+            $.post('load-employee-details.php', {id: id},
+                function (data, status) {
+
+                    if (data === 'error') {
+                        alert('Server_error');
+                    } else if (data === 'not_found') {
+                        $('#not-found').show();
+
+                    } else {
+                        var datas = data.split('`');
+                        var name = datas[0];
+                        var licenceNo = datas[1];
+                        var licenceExpiry = datas[2];
+                        var employeeStatus = datas[3];
+                        document.forms['main-form']['id'].value = id;
+                        document.forms['main-form']["name"].value = name;
+                        document.forms['main-form']['license-number'].value = licenceNo;
+                        document.forms['main-form']['expiry'].value = licenceExpiry;
+                        document.forms['main-form']['status'].value = employeeStatus;
+                    }
+                });
+        }
     }
 </script>
 </html>
