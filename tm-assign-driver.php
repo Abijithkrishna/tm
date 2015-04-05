@@ -24,7 +24,7 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
                                 }
                                 else
                                 {
-                                    $sql="update tm_employee set vehicle='".$_POST['number']."' WHERE institue_id={$institutionId} && id=".$_POST['driver'].";"."update tm_vehicle_details set driver=".$_POST['driver']." where institue_id={$institutionId} && number='".$_POST['number']."';";
+                                    $sql="update tm_employee set vehicle='".$_POST['number']."' WHERE institute_id={$institutionId} && id=".$_POST['driver'].";"."update tm_vehicle_details set driver=".$_POST['driver']." where institute_id={$institutionId} && number='".$_POST['number']."';";
 
 
                                     $result=mysqli_multi_query($dbconnection,$sql);
@@ -137,7 +137,7 @@ printLeft();
                     -->
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="tm-manage-vehicle.html">
+                            <a href="tm-manage-vehicle.php">
                                 <button type="button" class="btn" >Cancel</button>
                             </a>
 

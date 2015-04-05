@@ -112,7 +112,7 @@ if(isset($institutionId)) {
                 $( "#tabledata" ).empty().append(data);
             }
         );
-    };
+    }
 </script>
 </html>
 <?php

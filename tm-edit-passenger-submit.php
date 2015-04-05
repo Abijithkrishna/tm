@@ -18,7 +18,7 @@ if(checkPOST($keys)){
         $stop=safeString($dbconnection,$_POST['stop']);
 
 
-        $query= "update tm_passengers set route=".$route." ,stop=".$stop." where institue_id={$institutionId} && id=".$id;
+        $query= "update tm_passengers set route=".$route." ,stop=".$stop." where institute_id={$institutionId} && id=".$id;
         $result=mysqli_query($dbconnection,$query);
         if($result){
             header("location:tm-manage-passenger.php");

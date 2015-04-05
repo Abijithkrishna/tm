@@ -403,7 +403,7 @@ $(document).ready(function() {
 				column = column.split(',');
 				for (var i = 0; i < column.length; i++) {
 					column[i] = parseInt(column[i]);
-				};
+				}
 				opt.aoColumnDefs =  [
 				{ 'bSortable': false, 'aTargets': column }
 				];

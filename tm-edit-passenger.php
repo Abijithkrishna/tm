@@ -63,7 +63,7 @@ $row = $result->fetch_array();
                             <label for="routenumber" class="control-label">Route Number</label>
                             <div class="controls">
 
-                                <select name="router" id="select1" class='input-large' value="<?php echo $row['route'] ?>">
+                                <select name="router" id="select1" class='input-large' >
                                     <?
                                     require_once "praveenlib.php";
                                     require_once "datas.php";
@@ -76,13 +76,16 @@ $row = $result->fetch_array();
                                     }
                                     else
                                     {
-                                        $sql="select * from tm_bus_route institue_id={$institutionId}";
+                                        $sql="select * from tm_bus_route where institute_id={$institutionId}";
 
                                         $result1=mysqli_query($dbconnection,$sql);
 
                                         while($row1=mysqli_fetch_array($result1))
                                         {
-                                            echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
+                                            if($row1['route_number']==$row['route'])
+                                                echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
+                                            else
+                                                echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
 
                                         }
                                     }

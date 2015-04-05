@@ -85,7 +85,7 @@ function currentTime(){
 
 function randomFeed(){
 	var el = $("#randomFeed");
-	var random = new Array('<span class="label"><i class="icon-plus"></i></span> <a href="#">John Doe</a> added a new photo','<span class="label label-success"><i class="icon-user"></i></span> New user registered','<span class="label label-info"><i class="icon-shopping-cart"></i></span> New order received','<span class="label label-warning"><i class="icon-comment"></i></span> <a href="#">John Doe</a> commented on <a href="#">News #123</a>'),
+	var random = ['<span class="label"><i class="icon-plus"></i></span> <a href="#">John Doe</a> added a new photo','<span class="label label-success"><i class="icon-user"></i></span> New user registered','<span class="label label-info"><i class="icon-shopping-cart"></i></span> New order received','<span class="label label-warning"><i class="icon-comment"></i></span> <a href="#">John Doe</a> commented on <a href="#">News #123</a>'],
 	auto = el.parents(".box").find(".box-title .actions .custom-checkbox").hasClass("checkbox-active");
 	var randomIndex = Math.floor(Math.random() * 4);
 	var newElement = random[randomIndex];
@@ -159,7 +159,7 @@ $(document).ready(function() {
 	  for (var i = 0; i <= 10; i += 1)
 	  	d3.push([i, parseInt(31 + (Math.random() * 7))]);
 
-	  var ds = new Array();
+	  var ds = [];
 
 	  ds.push({
 	  	label:"Clicks per month",
@@ -714,7 +714,7 @@ menu.add("Direction from here", "itemA separator",
            function(){
          	    menu.close();
          	    addMarker(true);
-           })
+           });
  
 // MENU : ITEM 3
 menu.add("Zoom in", "zoomIn", 

@@ -26,7 +26,7 @@
     this.$selectableUl = $('<ul class="ms-list"></ul>');
     this.$selectionUl = $('<ul class="ms-list"></ul>');
     this.scrollTo = 0;
-  }
+  };
 
   MultiSelect.prototype = {
     constructor: MultiSelect,
@@ -273,7 +273,7 @@
               that.$selectionUl.focusout();
             }
           }
-        }
+        };
 
         ms.on('keydown', function(e){
           if (ms.is(':focus')){
@@ -284,7 +284,7 @@
       }
 
       var selectedValues = ms.find('option:selected').map(function(){ return $(this).val() }).get();
-      that.select(selectedValues, 'init')
+      that.select(selectedValues, 'init');
 
       if (typeof that.options.afterInit == 'function') {
         that.options.afterInit.call(this, this.$container);
@@ -298,7 +298,7 @@
 
     'select' : function(value, method){
       if (typeof value == 'string')
-        value = [value]
+        value = [value];
       var that = this,
           ms = this.$element,
           msIds = $.map(value, function(val, index){ return(that.sanitize(val)) }),
@@ -341,7 +341,7 @@
 
     'deselect' : function(value){
       if (typeof value == 'string')
-        value = [value]
+        value = [value];
       var that = this,
           ms = this.$element,
           msIds = $.map(value, function(val, index){ return(that.sanitize(val)) }),
@@ -429,7 +429,7 @@
     sanitize: function(value){
       return(value.replace(/[^A-Za-z0-9]*/gi, '_'));
     }
-  }
+  };
 
   /* MULTISELECT PLUGIN DEFINITION
    * ======================= */
@@ -443,7 +443,7 @@
           data = $this.data('multiselect'),
           options = $.extend({}, $.fn.multiSelect.defaults, $this.data(), typeof option == 'object' && option);
 
-      if (!data) $this.data('multiselect', (data = new MultiSelect(this, options)))
+      if (!data) $this.data('multiselect', (data = new MultiSelect(this, options)));
 
       if (typeof option == 'string'){
         data[option](args[1])
@@ -451,13 +451,13 @@
         data.init();
       }
     })
-  }
+  };
 
   $.fn.multiSelect.defaults = {
     selectableOptgroup: false,
     disabledClass : 'disabled',
     dblClick : false
-  }
+  };
 
   $.fn.multiSelect.Constructor = MultiSelect
 

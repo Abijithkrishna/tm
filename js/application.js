@@ -280,7 +280,7 @@ $("#message-form .text input").on("blur", function (e) {
 $("#message-form").submit(function (e) {
     e.preventDefault();
     var el = $(this),
-    randomAnswer = new Array("Lorem ipsum incididunt dolor...", "Lorem ipsum velit in incididunt id consectetur commodo.", "Lorem ipsum voluptate dolore occaecat reprehenderit anim elit nostrud.", "Lorem ipsum in dolor Excepteur et non sunt elit non officia in qui deserunt cupidatat aliquip.");
+    randomAnswer = ["Lorem ipsum incididunt dolor...", "Lorem ipsum velit in incididunt id consectetur commodo.", "Lorem ipsum voluptate dolore occaecat reprehenderit anim elit nostrud.", "Lorem ipsum in dolor Excepteur et non sunt elit non officia in qui deserunt cupidatat aliquip."];
     var mess = el.find("input[type=text]").val(),
     messageUl = el.parents(".messages");
 

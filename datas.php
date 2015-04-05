@@ -11,6 +11,7 @@ $dbdetails=array(
 );
 session_start();
 $sessionkey='admin_id';
+$institutionId=null;
 if(isset($_SESSION[$sessionkey]))$institutionId=$_SESSION[$sessionkey];
 
 

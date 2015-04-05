@@ -64,7 +64,7 @@ printLeft();
 												}
 												else
 												{
-													$sql="select * from tm_bus_route";
+													$sql="select * from tm_bus_route where institute_id={}";
 
 													$result=mysqli_query($dbconnection,$sql);
 

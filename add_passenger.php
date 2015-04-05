@@ -1,7 +1,6 @@
 <?php
 require_once "praveenlib.php";
 require_once "datas.php";
-
 $keys=array('id','type','route','stop');
 if(checkPOST($keys)){
     $dbconnection = connectSQL($dbdetails);

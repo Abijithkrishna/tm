@@ -19,7 +19,7 @@ if(checkPOST($keys)){
         $eta=safeString($dbconnection,$_POST['eta']);
 
         $query= "update tm_bus_stop set name='".$name."',route=".$routenumber.",distance=".$distance.
-            ",estimated_time='".$eta."'where institue_id={$institutionId} && id=".$number;
+            ",estimated_time='".$eta."'where institute_id={$institutionId} && id=".$number;
 
         if($dbconnection->query($query)){
             header("location:tm-manage-stop.php");

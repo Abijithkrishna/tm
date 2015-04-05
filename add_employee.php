@@ -25,9 +25,9 @@ if(isset($institutionId)) {
                 . $id . ",'" . $role . "','" . $name . "','" . $license . "','" . $expiry . "','" . $status . "','" . $verification . "',".$institutionId.")";
             $result = mysqli_query($dbconnection, $query);
             if ($result) {
-                echo "success".$institutionId;
+                echo "success";
             } else {
-                echo "bd_error_1 " . mysqli_error($dbconnection);
+                echo "bd_error_1 ";
             }
         }
     } else {

@@ -1599,7 +1599,7 @@ DynaTreeNode.prototype = {
 		// Callback params: child: undefined, the segment, isEndNode (segList.length === 0)
 		callback.call(tree, undefined, "notfound", seg, segList.length === 0);
 		tree.logWarning("Node not found: " + seg);
-		return;
+
 	},
 
 	resetLazy: function() {

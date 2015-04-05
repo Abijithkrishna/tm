@@ -16,7 +16,7 @@ if(checkPOST($keys)){
         $number=safeString($dbconnection,$_POST['number']);
         $conductor=safeString($dbconnection,$_POST['conductor']);
 
-        $query= "update tm_vehicle_details set conductor=".$conductor." where number='".$number."' and institue_id={$institutionId}";
+        $query= "update tm_vehicle_details set conductor=".$conductor." where number='".$number."' and institute_id={$institutionId}";
 
         $result=mysqli_query($dbconnection,$query);
         if($result){

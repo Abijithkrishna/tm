@@ -86,7 +86,7 @@ function printHead(){
     <!-- Apple devices fullscreen -->
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <!-- Apple devices fullscreen -->
-    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
 
     <!-- Bootstrap -->
@@ -147,7 +147,7 @@ function printNav(){
                 class="icon-reorder"></i></a>
         <ul class='main-nav'>
             <li>
-                <a href="index.html">
+                <a href="index.php">
                     <i class="icon-home"></i>
                     <span>Dashboard</span>
                 </a>

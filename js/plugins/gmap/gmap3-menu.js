@@ -29,26 +29,23 @@ function Gmap3Menu($div){
         function(){$(this).removeClass("hover");}
       );
     return $item;
-  };
-  
+  }
   function clearTs(){
     if (ts){
       clearTimeout(ts);
       ts = null;
     }
-  };
-  
+  }
   function initTs(t){
     ts = setTimeout(function(){that.close()}, t);
-  };
-  
+  }
   this.add = function(label, cl, fnc){
     items.push({
       label:label,
       fnc:fnc,
       cl:cl
     });
-  }
+  };
 
   // close previous and open a new menu 
   this.open = function(event){
@@ -89,7 +86,7 @@ function Gmap3Menu($div){
     
     // start auto-close
     initTs(5000);
-  }
+  };
   
   // close the menu
   this.close = function(){

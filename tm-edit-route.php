@@ -12,7 +12,7 @@ else {
     if (isset($_GET['id'])) {
 
         $id = $_GET['id'];
-        $query = "select * from tm_bus_route where institue_id={$institutionId} && route_number=" . $id ."  limit 1";
+        $query = "select * from tm_bus_route where institute_id={$institutionId} && route_number=" . $id ."  limit 1";
 
         if ($result=$dbconnection->query($query)){
             if($result->num_rows==1) {

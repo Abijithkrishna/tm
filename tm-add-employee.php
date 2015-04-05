@@ -129,34 +129,24 @@ printLeft();
             if(status==="success"){
                 alert(data);
                 if(data==='success')document.forms['main-form'].reset();
-
             }
         })
     }
     function loadDetails(){
-
-
-
         var id=document.forms['main-form']['id'].value;
         document.forms['main-form'].reset();
         if(id!==''&&!isNaN(id)) {
             $('#not-found').hide();
-
-
             $.post('load-employee-details.php', {id: id},
                 function (data, status) {
-
                     if (data === 'error') {
                         document.forms['main-form']['id'].value = id;
                         alert('Server_error');
                     } else if (data === 'not_found') {
                         document.forms['main-form']['id'].value = id;
                         $('#not-found').show();
-
-
                     } else {
                         var datas = data.split('`');
-
                         var name = datas[1];
                         var licenceNo = datas[2];
                         var licenceExpiry = datas[3];
@@ -174,7 +164,6 @@ printLeft();
     }
 </script>
 </html>
-
 <?php
 }else{
     header('location:'.$loginurl);

@@ -62,7 +62,7 @@ printLeft();
 								        }
 								        else
 								        {
-								        	$sql="select * from employee WHERE institue_id={$institutionId}";
+								        	$sql="select * from employee WHERE institute_id={$institutionId}";
 
 								        	$result=mysqli_query($dbconnection,$sql);
 

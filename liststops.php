@@ -50,7 +50,7 @@ if(isset($institutionId)) {
                                 $query = "select route_number from tm_bus_route where institute_id={$institutionId}";
                                 if($result = $dbconnection->query($query)){
                                     if($result){
-                                        echo '<select name="routenum" id="routenum" class="input-large" onchange="selectpost()" >';
+                                        echo '<select name="routenum" id="routenum" class="input-large" onchange="selectpost();" >';
                                         echo '<option value="-1">select route</option>';
                                         while($row = $result->fetch_array()){
                                             echo '<option value="'.$row['route_number'].'" class="form-control">'.$row['route_number'].'</option>';
@@ -124,7 +124,7 @@ if(isset($institutionId)) {
                 $( "#tabledata" ).empty().append(data);
             }
         );
-    };
+    }
 </script>
 </html>
 
