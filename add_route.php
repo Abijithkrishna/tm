@@ -24,7 +24,7 @@ if(checkPOST($keys)){
         if($result){
             echo "success";
         }else{
-            echo "bd_error_1 ".mysqli_error($dbconnection);
+            echo "Duplicate Entry found";
         }
     }
 }else{

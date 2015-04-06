@@ -78,7 +78,7 @@ printLeft();
                                     }
                                     else
                                     {
-                                        $sql="select * from tm_vehicle_details where driver is NULL ";
+                                        $sql="select * from tm_vehicle_details where driver is NULL and institute_id={$institutionId} ";
 
                                         $result=mysqli_query($dbconnection,$sql);
 
@@ -108,7 +108,7 @@ printLeft();
                                     }
                                     else
                                     {
-                                        $sql="select * from tm_employee where (role='driver' or role= 'dirverconductor') and vehicle is NULL";
+                                        $sql="select * from tm_employee where (role='driver' or role= 'dirverconductor') and institute_id={$institutionId} and vehicle is NULL";
 
                                         $result=mysqli_query($dbconnection,$sql);
 

@@ -24,7 +24,7 @@ require_once "datas.php";
             if($result){
                 echo "success";
             }else{
-                echo "bd_error_1 ".mysqli_error($dbconnection);
+                echo "Duplicate Entry Found ";
             }
         }
     }else{

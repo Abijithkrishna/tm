@@ -27,7 +27,7 @@ if(isset($institutionId)) {
             if ($result) {
                 echo "success";
             } else {
-                echo "bd_error_1 ";
+                echo "Id Already Exist";
             }
         }
     } else {

@@ -69,6 +69,7 @@ if(isset($institutionId)) {
                                 if(mysqli_connect_errno()) //Check if any error occurred on connection
                                 {
                                     echo "db_connection_fail";
+
                                 }
                                 else
                                 {

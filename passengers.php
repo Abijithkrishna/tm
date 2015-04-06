@@ -10,7 +10,7 @@ if(isset($_POST['route'])){
         $str="";
         while($row = $result->fetch_array()){
             $stop   = $row['id'];
-            $query1 = "select id,type from tm_passengers where route={$route} and stop={$stop}";
+            $query1 = "select id,type from tm_passengers where route={$route} and stop={$stop} and institute_id={$institutionId}";
             $result1 = $db->query($query1);
             $pass="";
             $passtype="";

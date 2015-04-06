@@ -225,7 +225,7 @@ function printNav(){
                         <a href="#">Account settings</a>
                     </li>
                     <li>
-                        <a href="more-login.html">Sign out</a>
+                        <a href="logout.php">Sign out</a>
                     </li>
                 </ul>
             </div>

@@ -36,7 +36,7 @@ printLeft();
 									<div class="control-group">
 										<label for="id" class="control-label">Passenger Id</label>
 										<div class="controls">
-											<input type="text" name="id" id="textfield" placeholder="" class="input-xlarge">
+											<input type="number"  required name="id" id="textfield" placeholder="" class="input-xlarge">
 										</div>
 									</div>
 									<div class="control-group">
@@ -65,7 +65,7 @@ printLeft();
 												}
 												else
 												{
-													$sql="select * from tm_bus_route";
+													$sql="select * from tm_bus_route where institute_id={$institutionId}";
 
 													$result=mysqli_query($dbconnection,$sql);
 
@@ -100,7 +100,7 @@ printLeft();
 													}
 													else
 													{
-														$sql="select * from tm_bus_stop where route=".$firstroute;
+														$sql="select * from tm_bus_stop where institute_id={$institutionId} and route=".$firstroute;
 
 														$result=mysqli_query($dbconnection,$sql);
 
@@ -140,6 +140,12 @@ printLeft();
 		var route_number=document.forms['main-form']["routenumber"].value;
 		var stop_number=document.forms['main-form']['stopnumber'].value;
 		var type =document.forms['main-form']['type'].value;
+
+		if(isNaN((id)||id===''||route_number===''||stop_number===''))
+		{
+			alert("Fill Details properly");
+			return;
+		}
 
 
 

@@ -80,7 +80,7 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_vehicle_details where conductor is NULL";
+                                    $sql="select * from tm_vehicle_details where conductor is NULL and institute_id={$institutionId}";
 
                                     $result=mysqli_query($dbconnection,$sql);
 
@@ -110,7 +110,7 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
                                 }
                                 else
                                 {
-                                    $sql="select * from tm_employee where (role='conductor' or role= 'dirverconductor') and vehicle is NULL";
+                                    $sql="select * from tm_employee where (role='conductor' or role= 'dirverconductor') and institute_id={$institutionId} and vehicle is NULL";
 
                                     $result=mysqli_query($dbconnection,$sql);
 

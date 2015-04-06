@@ -78,7 +78,11 @@ printLeft();
 		var start=document.forms['main-form']["start"].value;
 		var end=document.forms['main-form']['end'].value;
 		var time=document.forms['main-form']['start-time'].value;
+		if(isNaN(number)||number===''||isNaN(start)||start===''||isNaN(end)||end==='') {
+			alert("Enter details properly");
 
+			return;
+		}
 		$('button').attr('disabled',true);
 		$.post("add_route.php",{
 
@@ -90,6 +94,7 @@ printLeft();
 			$('button').attr('disabled',false);
 			if(status==="success"){
 				alert(data);
+				if(data==='success')document.forms['main-form'].reset();
 			}
 		})
 	}

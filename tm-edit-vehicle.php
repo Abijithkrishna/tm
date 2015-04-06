@@ -49,7 +49,7 @@ else {
                                 <h3><i class="icon-th-list"></i> New Vehicle</h3>
                             </div>
                             <div class="box-content nopadding">
-                                <form name="main-form" action="tm-edit-vehicle-submit.php" method="POST" class='form-horizontal form-bordered'>
+                                <form name="main-form" action="tm-edit-vehicle-submit.php"  method="POST" class='form-horizontal form-bordered'>
                                     <div class="control-group">
                                         <label for="number" class="control-label">Vehicle Number</label>
                                         <div class="controls">
@@ -93,7 +93,7 @@ else {
 
 
                                     <div class="form-actions">
-                                        <button  type="submit" class="btn btn-primary">Save</button>
+                                        <button  type="button" onclick="validate()" class="btn btn-primary">Save</button>
                                         <a href="tm-manage-vehicles.php">
                                             <button type="button" class="btn" >Cancel</button>
                                         </a>
@@ -108,7 +108,14 @@ else {
             </div>
 
             </body>
+<script>
+    function validate(){
+        var count=document.forms['main-form']['capacity'].value;
+        if(isNaN(count)||count==='')alert('Fill details properly');
+        else document.forms['main-form'].submit();
 
+    }
+</script>
             </html>
 
 
@@ -117,7 +124,7 @@ else {
         <?php
         }
     }else{
-        echo $dbconnection->error;
+        echo 'error';
     }
 }
 }

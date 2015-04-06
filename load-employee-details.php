@@ -6,7 +6,7 @@ if(isset($_POST['id'])){
     $dbconnection = connectSQL($dbdetails);
     if($dbconnection){
         $id=safeString($dbconnection,$_POST['id']);
-        $query="select * from hs_hr_employee where employee_id={$id}";
+        $query="select * from hs_hr_employee where employee_id={$id} and institution_id={$institutionId}";
         $result=$dbconnection->query($query);
         if($result){
             if($result->num_rows>0){

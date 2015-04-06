@@ -64,7 +64,7 @@ printLeft();
 												}
 												else
 												{
-													$sql="select * from tm_bus_route where institute_id={}";
+													$sql="select * from tm_bus_route where institute_id={$institutionId}";
 
 													$result=mysqli_query($dbconnection,$sql);
 
@@ -96,31 +96,7 @@ printLeft();
 										</div>
 									</div>
 									</div>
-									<!--
-									<div class="control-group">
-										<label for="password" class="control-label">Password</label>
-										<div class="controls">
-											<input type="password" name="password" id="password" placeholder="Password input" class="input-xlarge">
-										</div>
-									</div>
-									<div class="control-group">
-										<label class="control-label">Checkboxes<small>More information here</small></label>
-										<div class="controls">
-											<label class='checkbox'>
-												<input type="checkbox" name="checkbox"> Lorem ipsum eiusmod
-											</label>
-											<label class='checkbox'>
-												<input type="checkbox" name="checkbox"> ipsum eiusmod
-											</label>
-										</div>
-									</div>
-									<div class="control-group">
-										<label for="textarea" class="control-label">Textarea</label>
-										<div class="controls">
-											<textarea name="textarea" id="textarea" rows="5" class="input-block-level">Lorem ipsum mollit minim fugiat tempor dolore sit officia ut dolore. </textarea>
-										</div>
-									</div>
-									-->
+
 									<div class="form-actions">
 										<button onclick="send();" type="button" class="btn btn-primary">Save</button>
 										<a href="tm-manage-stop.php">
@@ -150,6 +126,11 @@ function send(){
 	var route_number=document.forms['main-form']['route-number'].value;
 	var distance=document.forms['main-form']['distance'].value;
 	var eta=document.forms['main-form']['eta'].value;
+
+	if(isNaN(number)||number===''||route_number===''||distance===''||isNaN(distance)){
+		alert("Enter details Properly");
+		return;
+	}
 	$('button').attr('disabled',true);
 	$.post("add_stop.php",{
 		name:name,
@@ -161,6 +142,7 @@ function send(){
 		$('button').attr('disabled',false);
 		if(status==="success"){
 			alert(data);
+			if(data==='success')document.forms['main-form'].reset();
 		}
 	})
 }
