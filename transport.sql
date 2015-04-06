@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2015 at 12:38 PM
+-- Generation Time: Apr 06, 2015 at 11:30 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -293,10 +293,11 @@ INSERT INTO `students` (`student_id`, `dept_id`, `grade`, `section`, `roll_no`, 
 
 CREATE TABLE IF NOT EXISTS `tm_bus_route` (
   `institute_id` int(11) NOT NULL,
-  `route_number` int(11) DEFAULT NULL,
+  `route_number` int(11) NOT NULL DEFAULT '0',
   `start_location` text,
   `end_location` text,
-  `start_time` time DEFAULT NULL
+  `start_time` time DEFAULT NULL,
+  PRIMARY KEY (`institute_id`,`route_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -305,7 +306,11 @@ CREATE TABLE IF NOT EXISTS `tm_bus_route` (
 
 INSERT INTO `tm_bus_route` (`institute_id`, `route_number`, `start_location`, `end_location`, `start_time`) VALUES
 (0, 1, '1', '20', '00:00:00'),
-(0, 2, '1', '20', '00:00:00');
+(0, 2, '1', '20', '00:00:00'),
+(0, 3, '3', '4', '00:00:00'),
+(0, 5, '1', '1', '00:00:00'),
+(0, 6, '1', '1', '00:00:00'),
+(1, 1, '3', '2', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -320,6 +325,7 @@ CREATE TABLE IF NOT EXISTS `tm_bus_stop` (
   `route` int(11) DEFAULT NULL,
   `distance` bigint(20) DEFAULT NULL,
   `estimated_time` time DEFAULT NULL,
+  PRIMARY KEY (`institute_id`,`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -328,10 +334,10 @@ CREATE TABLE IF NOT EXISTS `tm_bus_stop` (
 --
 
 INSERT INTO `tm_bus_stop` (`institute_id`, `name`, `id`, `route`, `distance`, `estimated_time`) VALUES
-(0, 'eee', 1, 1, 0, '00:00:00'),
-(0, 'ddd', 2, 1, 0, '00:00:00'),
-(0, 'iii', 2, 2, 0, '00:00:00'),
-(0, 'qwqw', 1, 2, 0, '00:00:00');
+(0, 'sf', 3, 1, 34, '00:00:00'),
+(0, 'aff3', 23, 6, 454, '00:00:00'),
+(0, 'sdaf', 33, 5, 44, '00:00:00'),
+(0, 'sdaf', 333, 5, 44, '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -349,8 +355,18 @@ CREATE TABLE IF NOT EXISTS `tm_employee` (
   `employee_status` text,
   `verification` text,
   `vehicle` text,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`institute_id`,`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tm_employee`
+--
+
+INSERT INTO `tm_employee` (`institute_id`, `id`, `role`, `name`, `license_number`, `expiry`, `employee_status`, `verification`, `vehicle`) VALUES
+(0, 33, 'driver', 'ewr', '', '0000-00-00', '', '', 'tn'),
+(23, 1, 'driver', 'praveen', '', '2013-11-15', '', '', NULL),
+(33, 2, 'dirverconductor', 'Boopathi', '123456789', '2025-11-14', '', '', NULL),
+(33, 3, 'driver', 'Nandha', 'TN54G2008000134', '2014-09-12', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -364,8 +380,17 @@ CREATE TABLE IF NOT EXISTS `tm_passengers` (
   `route` int(11) DEFAULT NULL,
   `stop` int(11) DEFAULT NULL,
   `type` varchar(15) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`institute_id`,`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tm_passengers`
+--
+
+INSERT INTO `tm_passengers` (`institute_id`, `id`, `route`, `stop`, `type`) VALUES
+(0, 3, 1, 3, 'student'),
+(0, 4, 5, 333, 'student'),
+(1, 2, 1, 1, 'student');
 
 -- --------------------------------------------------------
 
@@ -375,14 +400,15 @@ CREATE TABLE IF NOT EXISTS `tm_passengers` (
 
 CREATE TABLE IF NOT EXISTS `tm_vehicle_details` (
   `institute_id` int(11) NOT NULL,
-  `number` varchar(20) DEFAULT NULL,
+  `number` varchar(20) NOT NULL DEFAULT '',
   `type` text,
   `capacity` int(11) DEFAULT NULL,
   `vehicle_condition` text,
   `vehicle_status` text,
   `route` int(11) DEFAULT '0',
   `driver` int(11) DEFAULT NULL,
-  `conductor` int(11) DEFAULT NULL
+  `conductor` int(11) DEFAULT NULL,
+  PRIMARY KEY (`institute_id`,`number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -390,7 +416,12 @@ CREATE TABLE IF NOT EXISTS `tm_vehicle_details` (
 --
 
 INSERT INTO `tm_vehicle_details` (`institute_id`, `number`, `type`, `capacity`, `vehicle_condition`, `vehicle_status`, `route`, `driver`, `conductor`) VALUES
-(33, 'TNopapap', '1', 60, 'good', 'ok', 0, NULL, NULL),
+(0, 'dkl', '1', 34, '', '', 0, NULL, NULL),
+(0, 'tn', '1', 55, '', '', 0, 33, NULL),
+(1, '3423', '1', 343, '', '', 0, NULL, NULL),
+(23, 'tm', '1', 44, '', '', 0, NULL, NULL),
+(33, 'tm', '1', 33, '', '', 0, NULL, NULL),
+(33, 'TNopapap', '1', 88, 'good', 'ok', 0, NULL, NULL),
 (44, '9999999999', '1', 97, '', '', 0, NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
