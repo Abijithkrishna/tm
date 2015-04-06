@@ -113,6 +113,7 @@ if (isset($institutionId)) {
 
         </div>
     </div>
+<<<<<<< HEAD
 
     </body>
     <script>
@@ -152,6 +153,64 @@ if (isset($institutionId)) {
                 $.post('load-employee-details.php', {id: id},
                     function (data, status) {
                         if (data === 'error') {
+=======
+</div>
+
+</body>
+<script>
+    function send(){
+        var id=document.forms['main-form']['id'].value;
+        var role=document.forms['main-form']['role'].value;
+        var name=document.forms['main-form']["name"].value;
+        var license=document.forms['main-form']['license-number'].value;
+        var expiry=document.forms['main-form']['expiry'].value;
+        var status=document.forms['main-form']['status'].value;
+        var verification=document.forms['main-form']['verification'].value;
+
+        if(isNaN(id)||name===''||id===''){
+            alert('Fill Details Properly');
+            return;
+        }
+
+        $('button').attr('disabled',true);
+        $.post("add_employee.php",{
+
+            id:id,
+            role:role,
+            name:name,
+            license:license,
+            expiry:expiry,
+            status:status,
+            verification:verification
+        },function(data,status){
+            $('button').attr('disabled',false);
+            if(status==="success"){
+                alert(data);
+                if(data==='success')document.forms['main-form'].reset();
+            }
+        })
+    }
+    function loadDetails(){
+        var id=document.forms['main-form']['id'].value;
+        document.forms['main-form'].reset();
+        if(id!==''&&!isNaN(id)) {
+            $('#not-found').hide();
+            $.post('load-employee-details.php', {id: id},
+                function (data, status) {
+                    if (data === 'error') {
+                        document.forms['main-form']['id'].value = id;
+                        alert('Server_error');
+                    } else if (data === 'not_found') {
+                        document.forms['main-form']['id'].value = id;
+                        $('#not-found').show();
+                    } else {
+                        var datas = data.split('`');
+                        var name = datas[1];
+                        var licenceNo = datas[2];
+                        var licenceExpiry = datas[3];
+                        var employeeStatus = datas[4];
+                        if(datas[0]==='success') {
+>>>>>>> 3172f58e9af6dbaea44de720172b837b19f50666
                             document.forms['main-form']['id'].value = id;
                             alert('Server_error');
                         } else if (data === 'not_found') {
