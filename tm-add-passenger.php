@@ -36,7 +36,7 @@ printLeft();
 									<div class="control-group">
 										<label for="id" class="control-label">Passenger Id</label>
 										<div class="controls">
-											<input type="number"  required name="id" id="textfield" placeholder="" class="input-xlarge">
+											<input type="text"  required name="id" id="textfield" placeholder="" class="input-xlarge">
 										</div>
 									</div>
 									<div class="control-group">
@@ -141,7 +141,7 @@ printLeft();
 		var stop_number=document.forms['main-form']['stopnumber'].value;
 		var type =document.forms['main-form']['type'].value;
 
-		if(isNaN((id)||id===''||route_number===''||stop_number===''))
+		if(isNaN(id)||id===''||route_number===''||stop_number==='')
 		{
 			alert("Fill Details properly");
 			return;

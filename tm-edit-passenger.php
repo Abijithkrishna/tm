@@ -59,12 +59,12 @@ $row = $result->fetch_array();
                             </div>
                         </div>
 
-                        <div class="control-group">
-                            <label for="routenumber" class="control-label">Route Number</label>
-                            <div class="controls">
 
-                                <select name="router" id="select1" class='input-large' >
-                                    <?
+                        <div class="control-group">
+                            <label for="route" class="control-label">Route Number</label>
+                            <div class="controls">
+                                <select onchange="updateStop();" name="route" id="select1" class='input-large'>
+                                    <?php
                                     require_once "praveenlib.php";
                                     require_once "datas.php";
 
@@ -78,12 +78,12 @@ $row = $result->fetch_array();
                                     {
                                         $sql="select * from tm_bus_route where institute_id={$institutionId}";
 
-                                        $result1=mysqli_query($dbconnection,$sql);
+                                        $result=mysqli_query($dbconnection,$sql);
 
-                                        while($row1=mysqli_fetch_array($result1))
+                                        while($row1=mysqli_fetch_array($result))
                                         {
                                             if($row1['route_number']==$row['route'])
-                                                echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
+                                                echo '<option value="'.$row1['route_number'].'" selected >'.$row1['route_number'].'</option>';
                                             else
                                                 echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
 
@@ -92,17 +92,47 @@ $row = $result->fetch_array();
                                     ?>
 
 
-                                </select>
+                                </select><div id="loading" hidden="true">Loading stops..</div>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label for="stopnumber" class="control-label">Stop Number</label>
-                            <div class="controls">
-                                <input type="text" name="stop" id="textfield" placeholder="" class="input-xlarge"
-                                       value="<?php echo $row['stop'] ?>">
-                            </div>
-                        </div>
+                        <div id="stopsblock">
+                            <div class="control-group">
+                                <label for="stop" class="control-label">Stop Number</label>
+                                <div class="controls">
 
+                                    <select name="stop" id="select2" class='input-large'>
+                                        <?php
+                                        require_once "praveenlib.php";
+                                        require_once "datas.php";
+
+                                        $dbconnection = connectSQL($dbdetails);
+
+                                        if(mysqli_connect_errno()) //Check if any error occurred on connection
+                                        {
+                                            echo "db_connection_fail";
+                                        }
+                                        else
+                                        {
+                                            $sql="select * from tm_bus_stop where institute_id={$institutionId} and route=".$row['route'];
+
+                                            $result=mysqli_query($dbconnection,$sql);
+
+                                            while($row1=mysqli_fetch_array($result))
+                                            {
+                                                if($row1['id']==$row['stop'])
+                                                    echo '<option value="'.$row1['id'].'" selected >'.$row1['id']." (".$row1['name'].')</option>';
+                                                else
+                                                    echo '<option value="'.$row1['id'].'">'.$row1['id']." (".$row1['name'].')</option>';
+
+                                            }
+                                        }
+                                        ?>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-actions">
                             <button  type="submit" class="btn btn-primary">Save</button>
@@ -120,6 +150,22 @@ $row = $result->fetch_array();
 </div>
 
 </body>
+    <script>
+        function updateStop(){
+            var route=document.forms['main-form']["route"].value;
+
+            $('#loding').show();
+            $.post("tm-get-stops.php",{
+                route:route
+            },function(data,status){
+                $('#loding').hide();
+
+                document.getElementById("stopsblock").innerHTML=data;
+
+            });
+        }
+
+    </script>
 </html>
 
 
