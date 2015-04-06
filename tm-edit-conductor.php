@@ -10,29 +10,27 @@ printHead();
 <?php
 
 
-if(isset($_POST['number'])&&isset($_POST['driver'])){
+if (isset($_POST['number']) && isset($_POST['driver'])) {
     require_once "praveenlib.php";
     require_once "datas.php";
 
     $dbconnection = connectSQL($dbdetails);
 
-    if(mysqli_connect_errno()) //Check if any error occurred on connection
+    if (mysqli_connect_errno()) //Check if any error occurred on connection
     {
         echo "db_connection_fail";
-    }
-    else
-    {
-        $sql="update tm_employee set vehicle='".$_POST['number']."' WHERE institute_id={$institutionId} && id=".$_POST['driver'].";"
-            ."update tm_vehicle_details set conductor=NULL where institute_id={$institutionId} && conductor=".$_POST['driver'].";"
-            ."update tm_vehicle_details set conductor=".$_POST['driver']." where institute_id={$institutionId} && number='".$_POST['number']."';";
+    } else {
+        $sql = "update tm_employee set vehicle='" . $_POST['number'] . "' WHERE institute_id={$institutionId} && id=" . $_POST['driver'] . ";"
+            . "update tm_vehicle_details set conductor=NULL where institute_id={$institutionId} && conductor=" . $_POST['driver'] . ";"
+            . "update tm_vehicle_details set conductor=" . $_POST['driver'] . " where institute_id={$institutionId} && number='" . $_POST['number'] . "';";
 
 
-        $result=mysqli_multi_query($dbconnection,$sql);
+        $result = mysqli_multi_query($dbconnection, $sql);
 
-        if($result){
+        if ($result) {
             header("location:tm-manage-conductor.php");
 
-        }else echo $dbconnection->error;
+        } else echo $dbconnection->error;
     }
 
 }
@@ -58,12 +56,15 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
                     <h3><i class="icon-th-list"></i> Edit Conductor</h3>
                 </div>
                 <div class="box-content nopadding">
-                    <form name="main-form"  action="<?php $_SERVER['PHP_SELF']?>" method="POST" class='form-horizontal form-bordered'>
+                    <form name="main-form" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST"
+                          class='form-horizontal form-bordered'>
                         <div class="control-group">
                             <label for="driver" class="control-label">Driver ID</label>
+
                             <div class="controls">
 
-                                <input type="text"  name="driver"  class='input-large' value="<?php echo $_GET['id'];    ?>" readonly >
+                                <input type="text" name="driver" class='input-large' value="<?php echo $_GET['id']; ?>"
+                                       readonly>
 
                             </div>
                         </div>
@@ -79,19 +80,16 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
 
                                     $dbconnection = connectSQL($dbdetails);
 
-                                    if(mysqli_connect_errno()) //Check if any error occurred on connection
+                                    if (mysqli_connect_errno()) //Check if any error occurred on connection
                                     {
                                         echo "db_connection_fail";
-                                    }
-                                    else
-                                    {
-                                        $sql="select * from tm_vehicle_details where institute_id={$institutionId} && conductor is NULL";
+                                    } else {
+                                        $sql = "select * from tm_vehicle_details where institute_id={$institutionId} && conductor is NULL";
 
-                                        $result=mysqli_query($dbconnection,$sql);
+                                        $result = mysqli_query($dbconnection, $sql);
 
-                                        while($row=mysqli_fetch_array($result))
-                                        {
-                                            echo '<option value="'.$row['number'].'">'.$row['number'].'</option>';
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            echo '<option value="' . $row['number'] . '">' . $row['number'] . '</option>';
 
                                         }
                                     }
@@ -102,21 +100,10 @@ if(isset($_POST['number'])&&isset($_POST['driver'])){
                             </div>
                         </div>
 
-
-
-
-                        <!--
-                        <div class="control-group">
-                            <label for="" class="control-label"></label>
-                            <div class="controls">
-                                <input type="text" name="" id="textfield" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    -->
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Save</button>
                             <a href="tm-manage-driver.php">
-                                <button type="button" class="btn" >Cancel</button>
+                                <button type="button" class="btn">Cancel</button>
                             </a>
 
                         </div>

@@ -1,7 +1,7 @@
 <?php
 require_once "praveenlib.php";
 require_once "datas.php";
-if(isset($institutionId)) {
+if (isset($institutionId)) {
 
 
     $keys = array('id', 'name', 'role', 'license', 'expiry', 'status', 'verification');
@@ -22,7 +22,7 @@ if(isset($institutionId)) {
             $verification = safeString($dbconnection, $_POST['verification']);
 
             $query = "insert into tm_employee(id,role,name,license_number ,expiry,employee_status,verification,institute_id)values("
-                . $id . ",'" . $role . "','" . $name . "','" . $license . "','" . $expiry . "','" . $status . "','" . $verification . "',".$institutionId.")";
+                . $id . ",'" . $role . "','" . $name . "','" . $license . "','" . $expiry . "','" . $status . "','" . $verification . "'," . $institutionId . ")";
             $result = mysqli_query($dbconnection, $query);
             if ($result) {
                 echo "success";
@@ -33,8 +33,7 @@ if(isset($institutionId)) {
     } else {
         echo "not_enough_data";
     }
-}
-else{
-    header("location:".$loginurl);
+} else {
+    header("location:" . $loginurl);
 }
 

@@ -2,31 +2,29 @@
 require_once "praveenlib.php";
 require_once "datas.php";
 
-$keys=array('id','route','stop');
-if(checkPOST($keys)){
+$keys = array('id', 'route', 'stop');
+if (checkPOST($keys)) {
     $dbconnection = connectSQL($dbdetails);
 
-    if(mysqli_connect_errno()) //Check if any error occurred on connection
+    if (mysqli_connect_errno()) //Check if any error occurred on connection
     {
         echo "db_connection_fail";
-    }
-    else
-    {
+    } else {
 
-        $id=safeString($dbconnection,$_POST['id']);
-        $route=safeString($dbconnection,$_POST['route']);
-        $stop=safeString($dbconnection,$_POST['stop']);
+        $id = safeString($dbconnection, $_POST['id']);
+        $route = safeString($dbconnection, $_POST['route']);
+        $stop = safeString($dbconnection, $_POST['stop']);
 
 
-        $query= "update tm_passengers set route=".$route." ,stop=".$stop." where institute_id={$institutionId} && id=".$id;
-        $result=mysqli_query($dbconnection,$query);
-        if($result){
+        $query = "update tm_passengers set route=" . $route . " ,stop=" . $stop . " where institute_id={$institutionId} && id=" . $id;
+        $result = mysqli_query($dbconnection, $query);
+        if ($result) {
             header("location:tm-manage-passenger.php");
-        }else{
-            echo "bd_error_1 ".mysqli_error($dbconnection);
+        } else {
+            echo "bd_error_1 " . mysqli_error($dbconnection);
         }
     }
-}else{
+} else {
     echo "not_enough_data";
 }
 

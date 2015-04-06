@@ -2,32 +2,30 @@
 require_once "praveenlib.php";
 require_once "datas.php";
 
-$keys=array('number','type','capacity','condition','status');
-if(checkPOST($keys)){
+$keys = array('number', 'type', 'capacity', 'condition', 'status');
+if (checkPOST($keys)) {
     $dbconnection = connectSQL($dbdetails);
 
-    if(mysqli_connect_errno()) //Check if any error occurred on connection
+    if (mysqli_connect_errno()) //Check if any error occurred on connection
     {
         echo "db_connection_fail";
-    }
-    else
-    {
+    } else {
 
-        $number=safeString($dbconnection,$_POST['number']);
-        $type=safeString($dbconnection,$_POST['type']);
-        $capcity=safeString($dbconnection,$_POST['capacity']);
-        $condition=safeString($dbconnection,$_POST['condition']);
-        $status=safeString($dbconnection,$_POST['status']);
-        $query= "insert into tm_vehicle_details(number,type,capacity,vehicle_condition,vehicle_status,institute_id)values('"
-            .$number."',".$type.",".$capcity.",'".$condition."','".$status."',{$institutionId})";
-        $result=mysqli_query($dbconnection,$query);
-        if($result){
+        $number = safeString($dbconnection, $_POST['number']);
+        $type = safeString($dbconnection, $_POST['type']);
+        $capcity = safeString($dbconnection, $_POST['capacity']);
+        $condition = safeString($dbconnection, $_POST['condition']);
+        $status = safeString($dbconnection, $_POST['status']);
+        $query = "insert into tm_vehicle_details(number,type,capacity,vehicle_condition,vehicle_status,institute_id)values('"
+            . $number . "'," . $type . "," . $capcity . ",'" . $condition . "','" . $status . "',{$institutionId})";
+        $result = mysqli_query($dbconnection, $query);
+        if ($result) {
             echo "success";
-        }else{
+        } else {
             echo "Douplicate Entry ";
         }
     }
-}else{
+} else {
     echo "not_enough_data";
 }
 

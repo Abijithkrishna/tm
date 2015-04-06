@@ -2,33 +2,28 @@
 require_once "praveenlib.php";
 require_once "datas.php";
 
-$keys=array('route');
-if(checkPOST($keys)){
+$keys = array('route');
+if (checkPOST($keys)) {
     $dbconnection = connectSQL($dbdetails);
 
-    if(mysqli_connect_errno()) //Check if any error occurred on connection
+    if (mysqli_connect_errno()) //Check if any error occurred on connection
     {
         echo "db_connection_fail";
-    }
-    else
-    {
+    } else {
 
-        $route=safeString($dbconnection,$_POST['route']);
+        $route = safeString($dbconnection, $_POST['route']);
 
-        $query= "select * from tm_bus_stop where route_number=".$route." and institute_id={$institutionId}
+        $query = "select * from tm_bus_stop where route_number=" . $route . " and institute_id={$institutionId}
 ";
-        $result= mysqli_query($dbconnection,$query);
+        $result = mysqli_query($dbconnection, $query);
 
-        if($result)
-        {
+        if ($result) {
             $row = mysqli_fetch_array($result);
             $data = array(
                 ''
             );
             echo $row['start_location'];
-        }
-        else
-        {
+        } else {
             echo "Failed db connctn";
         }
     }
