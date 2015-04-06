@@ -113,6 +113,10 @@ printLeft();
         var status=document.forms['main-form']['status'].value;
         var verification=document.forms['main-form']['verification'].value;
 
+        if(isNaN(id)||name===''||id===''){
+            alert('Fill Details Properly');
+            return;
+        }
 
         $('button').attr('disabled',true);
         $.post("add_employee.php",{

@@ -62,7 +62,7 @@ else {
                             <label for="name" class="control-label">Employee Name</label>
                             <div class="controls">
                                 <input type="text" name="name" id="textfield" placeholder="" class="input-xlarge"
-                                       value="<?php echo $row['name'] ?>" >
+                                       value="<?php echo $row['name'] ?>" required>
                             </div>
                         </div>
                         <div class="control-group">
