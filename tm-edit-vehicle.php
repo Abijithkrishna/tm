@@ -76,6 +76,45 @@ else {
                                                    class="input-xlarge" value="<?php echo $row['capacity'] ?>">
                                         </div>
                                     </div>
+
+                                    <div class="control-group">
+                                        <label for="route" class="control-label">Route Number</label>
+                                        <div class="controls">
+
+                                            <select name="route" id="select1" class='input-large'>
+                                                <?php
+                                                require_once "praveenlib.php";
+                                                require_once "datas.php";
+
+                                                $dbconnection = connectSQL($dbdetails);
+
+                                                if(mysqli_connect_errno()) //Check if any error occurred on connection
+                                                {
+                                                    echo "db_connection_fail";
+                                                }
+                                                else
+                                                {
+                                                    $sql="select * from tm_bus_route where institute_id={$institutionId}";
+
+                                                    $result=mysqli_query($dbconnection,$sql);
+
+                                                    while($row1=mysqli_fetch_array($result))
+                                                    {
+                                                        if($row1['route_number']==$row['route'])
+                                                            echo '<option value="'.$row1['route_number'].'" selected >'.$row1['route_number'].'</option>';
+                                                        else
+                                                            echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
+
+                                                    }
+                                                }
+                                                ?>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
                                     <div class="control-group">
                                         <label for="condition" class="control-label">Condition</label>
                                         <div class="controls">

@@ -58,6 +58,41 @@ printLeft();
 											<input type="text" name="capacity" id="textfield" placeholder="Seat count" class="input-xlarge">
 										</div>
 									</div>
+
+									<div class="control-group">
+										<label for="route-number" class="control-label">Route Number</label>
+										<div class="controls">
+
+											<select name="route-number" id="select1" class='input-large'>
+												<?php
+												require_once "praveenlib.php";
+												require_once "datas.php";
+
+												$dbconnection = connectSQL($dbdetails);
+
+												if(mysqli_connect_errno()) //Check if any error occurred on connection
+												{
+													echo "db_connection_fail";
+												}
+												else
+												{
+													$sql="select * from tm_bus_route where institute_id={$institutionId}";
+
+													$result=mysqli_query($dbconnection,$sql);
+
+													while($row=mysqli_fetch_array($result))
+													{
+														echo '<option value="'.$row['route_number'].'">'.$row['route_number'].'</option>';
+
+													}
+												}
+												?>
+
+
+											</select>
+										</div>
+									</div>
+
 									<div class="control-group">
 										<label for="condition" class="control-label">Condition</label>
 										<div class="controls">
@@ -115,11 +150,12 @@ printLeft();
 <script>
 	function send(){
 		var number=document.forms['main-form']['vehicle-number'].value;
+		var route=document.forms['main-form']['route-number'].value;
 		var type=document.forms['main-form']["type"].value;
 		var capacity=document.forms['main-form']['capacity'].value;
 		var condition=document.forms['main-form']['condition'].value;
 		var status=document.forms['main-form']['status'].value;
-		if(number!==''&&capacity!==''&&!isNaN(capacity)) {
+		if(number!==''&&capacity!==''&&!isNaN(capacity)&&route!=='') {
 
 			$('button').attr('disabled', true);
 			$.post("add_vehicle.php", {
@@ -127,6 +163,7 @@ printLeft();
 				number: number,
 				type: type,
 				capacity: capacity,
+				route:route,
 				condition: condition,
 				status: status
 			}, function (data, status) {
