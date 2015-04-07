@@ -89,82 +89,71 @@ if (mysqli_connect_errno()) //Check if any error occurred on connection
                                                        class="input-xlarge" value="<?php echo $row['capacity'] ?>">
                                             </div>
                                         </div>
-<<<<<<< HEAD
-                                        <div class="control-group">
-                                            <label for="condition" class="control-label">Condition</label>
+                                </div>
 
-                                            <div class="controls">
-                                                <input type="text" name="condition" id="textfield" placeholder=""
-                                                       class="input-xlarge"
-                                                       value="<?php echo $row['vehicle_condition'] ?>">
-                                            </div>
-=======
+                                <div class="control-group">
+                                    <label for="route" class="control-label">Route Number</label>
+
+                                    <div class="controls">
+
+                                        <select name="route" id="select1" class='input-large'>
+                                            <?php
+                                            require_once "praveenlib.php";
+                                            require_once "datas.php";
+
+                                            $dbconnection = connectSQL($dbdetails);
+
+                                            if (mysqli_connect_errno()) //Check if any error occurred on connection
+                                            {
+                                                echo "db_connection_fail";
+                                            } else {
+                                                $sql = "select * from tm_bus_route where institute_id={$institutionId}";
+
+                                                $result = mysqli_query($dbconnection, $sql);
+
+                                                while ($row1 = mysqli_fetch_array($result)) {
+                                                    if ($row1['route_number'] == $row['route'])
+                                                        echo '<option value="' . $row1['route_number'] . '" selected >' . $row1['route_number'] . '</option>';
+                                                    else
+                                                        echo '<option value="' . $row1['route_number'] . '">' . $row1['route_number'] . '</option>';
+
+                                                }
+                                            }
+                                            ?>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label for="condition" class="control-label">Condition</label>
+
+                                    <div class="controls">
+                                        <input type="text" name="condition" id="textfield" placeholder=""
+                                               class="input-xlarge"
+                                               value="<?php echo $row['vehicle_condition'] ?>">
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="status" class="control-label">Status</label>
+
+                                        <div class="controls">
+                                            <input type="text" name="status" id="textfield" placeholder=""
+                                                   class="input-xlarge"
+                                                   value="<?php echo $row['vehicle_status'] ?>">
+                                        </div>
                                     </div>
 
-                                    <div class="control-group">
-                                        <label for="route" class="control-label">Route Number</label>
-                                        <div class="controls">
 
-                                            <select name="route" id="select1" class='input-large'>
-                                                <?php
-                                                require_once "praveenlib.php";
-                                                require_once "datas.php";
+                                    <div class="form-actions">
+                                        <button type="button" onclick="validate()" class="btn btn-primary">Save
+                                        </button>
+                                        <a href="tm-manage-vehicles.php">
+                                            <button type="button" class="btn">Cancel</button>
+                                        </a>
 
-                                                $dbconnection = connectSQL($dbdetails);
-
-                                                if(mysqli_connect_errno()) //Check if any error occurred on connection
-                                                {
-                                                    echo "db_connection_fail";
-                                                }
-                                                else
-                                                {
-                                                    $sql="select * from tm_bus_route where institute_id={$institutionId}";
-
-                                                    $result=mysqli_query($dbconnection,$sql);
-
-                                                    while($row1=mysqli_fetch_array($result))
-                                                    {
-                                                        if($row1['route_number']==$row['route'])
-                                                            echo '<option value="'.$row1['route_number'].'" selected >'.$row1['route_number'].'</option>';
-                                                        else
-                                                            echo '<option value="'.$row1['route_number'].'">'.$row1['route_number'].'</option>';
-
-                                                    }
-                                                }
-                                                ?>
-
-
-                                            </select>
-                                        </div>
                                     </div>
-
-
-                                    <div class="control-group">
-                                        <label for="condition" class="control-label">Condition</label>
-                                        <div class="controls">
-                                            <input type="text" name="condition" id="textfield" placeholder="" class="input-xlarge"
-                                                   value="<?php echo $row['vehicle_condition'] ?>" >
->>>>>>> 3172f58e9af6dbaea44de720172b837b19f50666
-                                        </div>
-                                        <div class="control-group">
-                                            <label for="status" class="control-label">Status</label>
-
-                                            <div class="controls">
-                                                <input type="text" name="status" id="textfield" placeholder=""
-                                                       class="input-xlarge"
-                                                       value="<?php echo $row['vehicle_status'] ?>">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-actions">
-                                            <button type="button" onclick="validate()" class="btn btn-primary">Save
-                                            </button>
-                                            <a href="tm-manage-vehicles.php">
-                                                <button type="button" class="btn">Cancel</button>
-                                            </a>
-
-                                        </div>
                                     </form>
                                 </div>
                             </div>
