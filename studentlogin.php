@@ -14,10 +14,10 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span4 offset4">
-            <form class="form-signin" action="" method="post" onsubmit="return false">
+            <form class="form-signin" id="form" action="student.php" method="post">
                 <h2 class="form-signin-heading">Student Login</h2>
-                <input id="email" class="input-block-level" placeholder="Email address" required type="email">
-                <input type="password" id="password" class="input-block-level" placeholder="Password" required>
+                <input type="email" id="email" name="email" class="input-block-level" placeholder="Email address" required>
+                <input type="password" id="password" name="password" class="input-block-level" placeholder="Password" required>
 
                 <p class="text-error"></p>
                 <label class="checkbox">
@@ -37,6 +37,10 @@
                 password: password
             }, function (data) {
                 $('.text-error').html(data);
+                if(data === "success")
+                    document.getElementById("email").value=email;
+                document.getElementById("password").value=password;
+                document.getElementById('form').submit();
             }
         );
     }

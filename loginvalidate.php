@@ -1,36 +1,32 @@
 <?php
-require_once "praveenlib.php";
-require_once "datas.php";
+require_once('praveenlib.php');
+require_once('datas.php');
 
-    $keys = array('email', 'password');
-    if (checkPOST($keys)) {
-        $dbconnection = connectSQL($dbdetails);
+$keys = array('email','password');
 
-        if (mysqli_connect_errno()) //Check if any error occurred on connection
-        {
-            echo "db_connection_fail";
-        } else {
-
-            $email = safeString($dbconnection, $_POST['email']);
-            $password = safeString($dbconnection, $_POST['password']);
-
-            $query = "select password from students where email_id='{$email}'";
-            echo $query;
-            $result = mysqli_query($dbconnection, $query);
-            if ($result) {
-                $md5= md5($password);
-                $row = $result->fetch_array();
-                if($row['password']==$md5){
-                    header('location:student.php');
-                }
-                else{
-                    echo "Wrong password";
-                }
-            } else {
-                echo "Invalid Email Id";
-            }
-        }
+if(checkPOST($keys)){
+    $dbConnect = connectSQL($dbdetails);
+    if (mysqli_connect_errno()) //Check if any error occurred on connection
+    {
+        echo "db_connection_fail";
     } else {
-        echo "not_enough_data";
+        $email = safeString($dbConnect,$_POST['email']);
+        $pwd = safeString($dbConnect,$_POST['password']);
+        $pwd = md5($pwd);
+        $query = "select * from students WHERE email_id='{$email}'";
+        $result = $dbConnect->query($query);
+        $nuwrows = $result->num_rows;
+        if($nuwrows > 0){
+            $row = $result->fetch_array();
+            if($pwd == $row['password']){
+                echo "success";
+            }else{
+                echo "Wrong password";
+            }
+        }else{
+            echo "Invalid Email id";
+        }
     }
-
+    }else{
+    echo "Insufficient Data";
+}

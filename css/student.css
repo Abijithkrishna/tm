@@ -57,3 +57,8 @@ body {
     background: #368EE0 none repeat scroll 0% 0%;
     color:#ffffff;
 }
+.navbar .nav >li>a{
+    background: #368EE0 none repeat scroll 0% 0%;
+    color:#ffffff;
+    text-shadow: none;
+}
